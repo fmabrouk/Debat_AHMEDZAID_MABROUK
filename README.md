@@ -5,7 +5,7 @@
 La j'ai réprésenté les arguments par des entiers mais nous on doit representer en A1,....,An du coup des String donc on doit faire un tableau des String <br>
 ou bien à chaque fois on fait avec la méthode split on retire la lettre A et on garde l'entier <br>
 
-#les classes:
+# les classes:
 
 Pour les classes on va faire:<br> 
 une classe graphe pour les matrices d'adjacences et dedans une méthode ajouter contradiction<br>
