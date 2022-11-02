@@ -5,7 +5,7 @@ public class Graphe {
 	/*
 	 * tableau de deux dimensions pour réprsenter la matrice d'adjacence
 	*/
-	  private boolean adjMatrice[][];
+	  private  boolean adjMatrice[][];
 	  
 	  /*
 	   * nombre de sommets(arguments)
@@ -25,7 +25,7 @@ public class Graphe {
 	   * @param i l'argument qui contredit
 	   * @param j l'argument qui reçoit la contradiction
 	  */
-	  public void addContradiction(int i, int j) {
+	  public  void addContradiction(int i, int j) {
 	    adjMatrice[i][j] = true;
 	  }
 
