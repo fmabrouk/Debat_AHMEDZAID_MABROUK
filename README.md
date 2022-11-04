@@ -21,5 +21,5 @@ J'ai ajouté une classe en utilisant les arrayList pas les tableau mais j'ai pas
 pour l'ensemble je pense on va faire un arrayList des arguments du coup un arrayList des String
 
 # probleme 
-[A1,A5] n'est pas admissible pourtant il dit que cest une solution admissible du coup probleme au  niveau de condition 2
+[A1,A5] n'est pas admissible pourtant il dit que cest une solution admissible du coup probleme au  niveau de condition 2 </br>
 =>J'ai trouvé le bug c'est que tant que A1 verifie les deux conditions il retourne directement true le compteur ca passe pas au suivant
