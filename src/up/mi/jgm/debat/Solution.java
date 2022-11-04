@@ -28,30 +28,30 @@ public class Solution {
 		}
 	}
 	
-	public boolean solutionAdmissible(Graphe g) {
+	public boolean solutionAdmissible(Graphe g,int n) {
 		if(E.isEmpty()) {
 			System.out.println("La solution est vide donc admissible ");
 			return true;
 		}
-		if(condition1(g) && condition2(g)) {
+		if(condition1(g) && condition2(g,n)) {
 			return true;
 		}
 		return false;
 		
 	}
 	
-	private boolean condition2(Graphe g) {
-		if(E.size() == 1) {
-			return true;
-		}else {
-			for(int i=0;i<E.size();i++) {
-				for(int j = 0;j < E.size();j++) {
-					if(verif(E.get(i),E.get(j),g) && verif(E.get(j),E.get(i),g)) {
+	private boolean condition2(Graphe g,int n) {
+		for(int i=0;i< n;i++) {
+			for(int j= 0;j<E.size();j++) {
+				if(verif2(i,E.get(j),g)) {
+					if(verif3(E.get(j),i,g))
 						return true;
-					}
+					System.out.println("l'argument "+E.get(j)+ " ne se defend pas contre A"+i );
 				}
+
 			}
 		}
+		
 		return false;
 
 	}
@@ -80,6 +80,22 @@ public class Solution {
 		}
 		return false;
 		
+	}
+	
+	private boolean verif2(int n,String arg,Graphe g) {
+		String[] str = arg.split("A");
+		if(g.verifContradiction(n, Integer.parseInt(str[1]) - 1)){
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean verif3(String arg,int n,Graphe g) {
+		String[] str = arg.split("A");
+		if(g.verifContradiction(Integer.parseInt(str[1]) - 1,n)){
+			return true;
+		}
+		return false;
 	}
 	
 	public void affichage() {
