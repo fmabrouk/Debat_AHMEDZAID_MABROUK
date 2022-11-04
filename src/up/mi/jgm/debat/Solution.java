@@ -39,22 +39,43 @@ public class Solution {
 		return false;
 		
 	}
+	/*
+	private boolean condition2(Graphe g,int n) {
+		for(int i=0;i< n;i++) {
+			for(int j= 0;j<E.size();) {
+				if(verif2(i,E.get(j),g) && verif3(E.get(j),i,g)) {
+					return true;
+				}
+				System.out.println("l'argument "+E.get(j)+ " ne se defend pas contre A"+ (i+1));
+				return false;
+				}
+		}
+		return false;
+
+	}
+	*/
 	
 	private boolean condition2(Graphe g,int n) {
 		for(int i=0;i< n;i++) {
 			for(int j= 0;j<E.size();j++) {
+				//System.out.println(" i :" +i +" || j : "+j);
 				if(verif2(i,E.get(j),g)) {
-					if(verif3(E.get(j),i,g))
-						return true;
-					System.out.println("l'argument "+E.get(j)+ " ne se defend pas contre A"+i );
+					if(!verif3(E.get(j),i,g)) {
+						//System.out.println("E.get("+j+") : "+E.get(j));
+						//System.out.println("i : "+i);
+						System.out.println("l'argument "+E.get(j)+ " ne se defend pas contre A"+ (i+1));
+						return false;
+					}
+					
+					//return false;
 				}
-
 			}
+
 		}
-		
-		return false;
+		return true;
 
 	}
+	
 	private boolean condition1(Graphe g) {
 		for(int i=0;i<E.size();i++) {
 			for( int j=0;j<E.size();j++) {
@@ -92,7 +113,9 @@ public class Solution {
 	
 	private boolean verif3(String arg,int n,Graphe g) {
 		String[] str = arg.split("A");
-		if(g.verifContradiction(Integer.parseInt(str[1]) - 1,n)){
+		//System.out.println("Arg : "+arg+" || n : "+n);
+		//System.out.println("(Integer.parseInt(str[1]) - 1) : "+(Integer.parseInt(str[1]) - 1));
+		if(g.verifContradiction((Integer.parseInt(str[1]) - 1) , n )){
 			return true;
 		}
 		return false;

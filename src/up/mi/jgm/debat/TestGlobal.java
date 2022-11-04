@@ -18,7 +18,7 @@ public class TestGlobal {
 		//System.out.print(g.toString());
 		Solution E = new Solution();
 		//E.affichage();
-		//E.AjouteArgument("A1");
+		E.AjouteArgument("A1");
 		//E.AjouteArgument("A2");
 		//E.AjouteArgument("A3");
 		//E.AjouteArgument("A4");

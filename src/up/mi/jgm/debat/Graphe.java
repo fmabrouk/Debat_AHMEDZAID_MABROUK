@@ -30,6 +30,7 @@ public class Graphe {
 	  }
 	  
 	  public boolean verifContradiction(int i,int j) {
+		 // System.out.println("i : "+i+" j : "+j);
 		  if(adjMatrice[i][j] == true) {
 			  return true;
 		  }
