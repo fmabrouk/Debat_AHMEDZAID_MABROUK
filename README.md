@@ -14,3 +14,6 @@ une classe solution dont on va vérifier si la solution est admissible<br>
 une classe menu1<br> 
 une classe menu2<br>
 une classe main tout court (toujours le main elle doitb etre courte)
+
+# Explications 
+J'ai ajouté une classe en utilisant les arrayList pas les tableau mais j'ai pas utilisé du coup stv aprés on change en arrayList mais tfaçon le programme avec les tableau ca marche la fonction ajouter contradiction et pour l'ensemble 
