@@ -41,9 +41,15 @@ public class Solution {
 	}
 	
 	private boolean condition2(Graphe g) {
-		for(int j = 0;j < E.size();j++) {
-			if(verif(E.get(j),E.get(j+1),g) && verif(E.get(j + 1),E.get(j),g)) {
-				return true;
+		if(E.size() == 1) {
+			return true;
+		}else {
+			for(int i=0;i<E.size();i++) {
+				for(int j = 0;j < E.size();j++) {
+					if(verif(E.get(i),E.get(j),g) && verif(E.get(j),E.get(i),g)) {
+						return true;
+					}
+				}
 			}
 		}
 		return false;
@@ -51,25 +57,16 @@ public class Solution {
 	}
 	private boolean condition1(Graphe g) {
 		for(int i=0;i<E.size();i++) {
-			if(verif(E.get(i),E.get(i),g)) {
-				System.out.println("Il existe une contradiction interne en " + E.get(i));
-				return false;
-			}
-			if(verif(E.get(i),E.get(i+1),g)) {
-				System.out.println("Il existe une contradiction interne entre "+ E.get(i) + " et " + E.get(i + 1));
-				return false;
-			}
-			if(verif(E.get(i+1),E.get(i),g)) {
-				System.out.println("Il existe une contradiction interne entre "+ E.get(i + 1) + " et " + E.get(i));
-				return false;
-			}
-			if(verif(E.get(i),E.get(i+2),g)) {
-				System.out.println("Il existe une contradiction interne entre "+ E.get(i) + " et " + E.get(i + 2));
-				return false;
-			}
-			if(verif(E.get(i+2),E.get(i),g)) {
-				System.out.println("Il existe une contradiction interne entre "+ E.get(i + 2) + " et " + E.get(i));
-				return false;
+			for( int j=0;j<E.size();j++) {
+				if(verif(E.get(i),E.get(j),g)) {
+					System.out.println("Il existe une contradiction entre "+ E.get(i)+" et " + E.get(j));
+					return false;
+				}
+				
+				if(verif(E.get(j),E.get(i),g)) {
+					System.out.println("Il existe une contradiction entre "+ E.get(j)+" et " + E.get(i));
+					return false;
+				}
 			}
 		}
 		return true;
@@ -88,7 +85,7 @@ public class Solution {
 	public void affichage() {
 	    if(E.isEmpty())
 	    	System.out.println("La solution est vide");
-	    System.out.println(E);
+	    System.out.println("E = "+E);
 	}
 	
 }
