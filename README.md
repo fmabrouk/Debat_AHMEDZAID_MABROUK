@@ -22,3 +22,4 @@ pour l'ensemble je pense on va faire un arrayList des arguments du coup un array
 
 # probleme 
 [A1,A5] n'est pas admissible pourtant il dit que cest une solution admissible du coup probleme au  niveau de condition 2
+=>J'ai trouvé le bug c'est que tant que A1 verifie les deux conditions il retourne directement true le compteur ca passe pas au suivant
