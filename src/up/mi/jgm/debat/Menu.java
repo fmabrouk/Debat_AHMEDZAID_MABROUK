@@ -45,7 +45,7 @@ public class Menu {
 		String arg2 = sc.next();
 		String[] str1 = arg1.split("A");
 		String[] str2 = arg2.split("A");
-		g.addContradiction(Integer.parseInt(str1[0]), Integer.parseInt(str2[0]));
+		g.addContradiction(Integer.parseInt(str1[1]), Integer.parseInt(str2[1]));
 	}
 	
 	public static void printMenu2() {
