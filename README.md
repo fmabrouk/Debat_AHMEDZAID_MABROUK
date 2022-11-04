@@ -22,3 +22,6 @@ pour l'ensemble je pense on va faire un arrayList des arguments du coup un array
 
 # probleme 
 probleme au niveau de l'implementation de la fonction qui va verifier si la solution est admissible ou pas. 
+
+# Réussite 
+toutes les fonctions cest bon reste la barre d'affichage
