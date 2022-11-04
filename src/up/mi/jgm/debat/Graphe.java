@@ -28,6 +28,14 @@ public class Graphe {
 	  public  void addContradiction(int i, int j) {
 	    adjMatrice[i][j] = true;
 	  }
+	  
+	  public boolean verifContradiction(int i,int j) {
+		  if(adjMatrice[i][j] == true) {
+			  return true;
+		  }
+		  return false;
+			  
+	  }
 
 	  /**
 	   * fonction permet d'afficher la matrice d'adjacence
