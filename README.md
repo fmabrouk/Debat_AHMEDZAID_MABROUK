@@ -21,7 +21,4 @@ J'ai ajouté une classe en utilisant les arrayList pas les tableau mais j'ai pas
 pour l'ensemble je pense on va faire un arrayList des arguments du coup un arrayList des String
 
 # probleme 
-probleme au niveau de l'implementation de la fonction qui va verifier si la solution est admissible ou pas. 
-
-# Réussite 
-toutes les fonctions cest bon reste la barre d'affichage
+[A1,A5] n'est pas admissible pourtant il dit que cest une solution admissible du coup probleme au  niveau de condition 2
