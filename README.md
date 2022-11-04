@@ -19,3 +19,6 @@ une classe main tout court (toujours le main elle doitb etre courte)
 J'ai ajouté une classe en utilisant les arrayList pas les tableau mais j'ai pas utilisé du coup stv aprés on change en arrayList mais tfaçon le programme avec les tableau ca marche la fonction ajouter contradiction et pour l'ensemble 
 # Clasees ensemble 
 pour l'ensemble je pense on va faire un arrayList des arguments du coup un arrayList des String
+
+# probleme 
+probleme au niveau de l'implementation de la fonction qui va verifier si la solution est admissible ou pas. 
