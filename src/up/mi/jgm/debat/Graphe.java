@@ -27,6 +27,7 @@ public class Graphe {
 	  */
 	  public  void addContradiction(int i, int j) {
 	    adjMatrice[i][j] = true;
+	    System.out.println("contradiction ajoutés entre A"+(i+1)+" et A"+(j+1));
 	  }
 	  
 	  public boolean verifContradiction(int i,int j) {
