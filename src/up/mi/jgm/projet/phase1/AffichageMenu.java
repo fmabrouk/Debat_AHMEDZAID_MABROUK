@@ -1,13 +1,20 @@
-package up.mi.jgm.debat;
+package up.mi.jgm.projet.phase1;
 
 import java.util.Scanner;
 
+
 public class AffichageMenu {
+	
+	/**
+	 * variable Scanner globale*/
 	private static Scanner sc = new Scanner(System.in);
+	
+	/**
+	 * fonction qui permet d'afficher le menu principal de programme*/
 	public static void menuPrincipal() {
 		System.out.println("Veuillez entrer le nombre d'arguments ?");
 		int n =sc.nextInt();
-		Graphe g = new Graphe(n);
+		Debat g = new Debat(n);
 		int choix = 0;
 		do {
 			System.out.println("1)ajouter une contradiction");
@@ -32,7 +39,12 @@ public class AffichageMenu {
 		sc.close();
 	}
 	
-	private static void menu2(Graphe g,int n) {
+	
+	/**
+	 * fonction qui permet d'afficher la deuxiéme menu de programme
+	 * @param g le graphe modélisant le débat
+	 * @param n le nombre d'argument*/
+	private static void menu2(Debat g,int n) {
 		Solution sol = new Solution();
 		int choix1 = 0;
 		do {
@@ -62,6 +74,11 @@ public class AffichageMenu {
 				break;
 			case 4:
 				sol.affichage();
+				if(sol.solutionAdmissibleSansErreur(g, n)) {
+					System.out.println("la solution est admissible");
+				} else {
+				System.out.println("la solution n'est pas admissible");
+				}
 				System.exit(0);
 				break;
 			default:

@@ -1,7 +1,6 @@
-package up.mi.jgm.debat;
+package up.mi.jgm.projet.phase1;
 
-public class Graphe {
-	
+public class Debat {
 	/*
 	 * tableau de deux dimensions pour réprsenter la matrice d'adjacence
 	*/
@@ -15,7 +14,7 @@ public class Graphe {
 	  /*
 	   * Constructeur de la classe graphe
 	  */
-	  public Graphe(int numNoeud) {
+	  public Debat(int numNoeud) {
 	    this.numNoeud = numNoeud;
 	    adjMatrice = new boolean[numNoeud][numNoeud];
 	  }
@@ -30,8 +29,12 @@ public class Graphe {
 	    System.out.println("contradiction ajoutés entre A"+(i+1)+" et A"+(j+1));
 	  }
 	  
+	  /**
+	   * fonction permet de vérifier s'il existe une contradiction entre i et j
+	   * @param i l'argument qui contredit
+	   * @param j l'argument qui subit la contradiction
+	   * @return renvoie true s'il y avait une contardiction et false sinon*/
 	  public boolean verifContradiction(int i,int j) {
-		 // System.out.println("i : "+i+" j : "+j);
 		  if(adjMatrice[i][j] == true) {
 			  return true;
 		  }
@@ -54,8 +57,4 @@ public class Graphe {
 	    }
 	    return s.toString();
 	  }
-
-	
-	
-	
 }
