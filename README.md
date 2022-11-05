@@ -24,3 +24,6 @@ pour l'ensemble je pense on va faire un arrayList des arguments du coup un array
 [A1,A5] n'est pas admissible pourtant il dit que cest une solution admissible du coup probleme au  niveau de condition 2 </br>
 =>J'ai trouvé le bug c'est que tant que A1 verifie les deux conditions il retourne directement true le compteur ca passe pas au suivant </br>
 =>Probelem resolu reste que les barres d'affichage(les menus) et la mise en forme de projet(Les commentaires et les nommages des modules....)
+
+# fin
+projet terminé reste que la mise en forme et un rapport en plus, j'ai déjà testé mais on doit faire plusieurs tests tous les cas possibles.
