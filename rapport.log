@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.6)  6 NOV 2022 12:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.6)  6 NOV 2022 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -988,18 +988,18 @@ LaTeX Warning: No \author given.
 [1
 
 {C:/Users/fayez/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-(rapport.aux)
+[3] (rapport.aux)
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: CE867CDBA7233B30C0C262D3773BF5A4;534.
+(rerunfilecheck)             Checksum: D43443874D55D59A3BCE0FE89153444D;1274.
  ) 
 Here is how much of TeX's memory you used:
- 24173 strings out of 475385
- 446904 string characters out of 2776907
- 954694 words of memory out of 3000000
- 45134 multiletter control sequences out of 15000+600000
- 513657 words of font info for 55 fonts, out of 8000000 for 9000
+ 24191 strings out of 475385
+ 447147 string characters out of 2776907
+ 961694 words of memory out of 3000000
+ 45146 multiletter control sequences out of 15000+600000
+ 516603 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,6n,104p,390b,450s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 100i,6n,104p,390b,628s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C
 :/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C
 :/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:
@@ -1007,9 +1007,9 @@ Here is how much of TeX's memory you used:
 Users/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/U
 sers/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/U
 sers/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb>
-Output written on rapport.pdf (2 pages, 132500 bytes).
+Output written on rapport.pdf (3 pages, 151259 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 8 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 94 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

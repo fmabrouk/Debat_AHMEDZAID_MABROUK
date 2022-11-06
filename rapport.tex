@@ -64,9 +64,56 @@
 	\newpage
 	\section{Introduction}
 	\paragraph {}
+	Notre projet consiste à proposer des solutions à un certain débat en se basant sur les arguments de
+	personnes qui se contredisent.\\
+	Ce document contiendra 2 parties explicatives: 
+	\begin{itemize}
+		\item La première qui définira les démarches de programmation suivies en représentant\\ un
+		diagramme de classe.
+		\item  La deuxième listera les différents packages utilisés, les classes, et expliquera la fonction de
+		chaque méthode.
+	\end{itemize}
 	\section{Démarche de programmation}
+	\subsection{Diagramme de classe}
 	\section{Documentation technique}
+	\subsection{La classe Main}
+	La classe \textbf{main} fait appel seulement à l’affichage du menu.
+	\subsection{La classe affichage}
+	La classe \textbf{affichageMenu} est la classe principale qui permet d’afficher le menu et exécuter les
+	différentes requêtes de l’utilisateur.Elle comporte deux méthodes :
+	\begin{itemize}
+		\item [*] \textbf{menuPrincipal} : Affiche le premier menu pour ajouter les contradictions entre différents arguments.
+		\item [*] \textbf{menu2} : Affiche le menu secondaire qui permet d’ajouter un argument dans la solution ou
+		bien le retirer et aussi vérifier la solution.
+	\end{itemize}
+	\subsection{La classe Debat}
+	Cette classe représente le graphe que nous utilisons pour définir les différentes contradictions entre arguments, elle comporte deux méthodes :
+	\begin{itemize}
+		\item [*] \textbf{addContradiction} : Elle prend en paramètres le numéro de l’argument et met un vrai
+		dans la matrice d’adjacence du graphe à l’emplacement souhaité.
+		\item [*] \textbf{verifContradiction} : Permet de vérifier si deux arguments se contredisent en renvoyant la valeur du booléen à l’emplacement passé en paramètres.
+	\end{itemize}
+	\subsection{La classe solution}
+	Cette classe permet de gérer le second menu, elle comporte 4 fonctions
+	principales :
+	\begin{itemize}
+		\item [*] \textbf{ajouteArgument} : ajouteArgument : Ajoute un argument dans la liste E (Ensemble des solutions admissibles) en vérifiant si l’argument est déjà dans la liste .
+		\item [*] \textbf{retireargument} :Permet de retirer un argument de l’ensemble.
+		\item [*] \textbf{solutionAdmissible} : Permet de vérifier si un argument est une solution admissible
+		cela en exécutant deux méthodes qui permettent de tester si un argument est une
+		solution admissible : 
+		\begin{itemize}
+			\item \textbf{condition1} : Vérifie si dans le graphe nous avons deux arguments qui se contredisent cela en parcourant le graphe et vérifie si les emplacements (i,j) et (j,i) sont tous les deux a vrai.
+			\item \textbf{condition2} : Vérifie si pour un argument A qui contredit un élément de la liste de E il existe un élément de E qui puisse contredire l’argument A cela en parcourant la matrice d’adjacence on fixe un élément de la matrice, on
+			recherche un élément qui est contredit par cet élément qui est fixé si on en trouve un on cherche un autreé élément qui contredit ce premier sinon on retourne faux.
+		\end{itemize}
+	\item [*] \textbf{solutionAdmissibleSansErreur} : Si l’utilisateur choisie l’option 4 (quitter le programme) on exécute le deux méthodes condtion1SansErreur qui est semblable à condtion1 sans affichage d’erreur et condtion2SansErreur.
+	\end{itemize}
+
+	
 	\section{Conclusion}
+	Les classes principales du projet ont été définies correctement durant cette première phase ainsi que les méthodes. Nous avons un programme qui est fonctionnel pour débuter la seconde partie qui
+	consiste à la recherche de solution admissible et préférée.
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
