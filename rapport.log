@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.6)  7 NOV 2022 00:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.6)  7 NOV 2022 00:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,6 +1075,11 @@ Package pdftex.def Info: debat.PNG  used on input line 80.
 
 {C:/Users/fayez/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./debat.PNG>
 ]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+05.
+ (C:\Users\fayez\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 Overfull \hbox (53.59996pt too wide) in paragraph at lines 109--110
 [][] 
  []
@@ -1084,23 +1089,24 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: D43443874D55D59A3BCE0FE89153444D;1274.
  ) 
 Here is how much of TeX's memory you used:
- 26676 strings out of 475385
- 519351 string characters out of 2776907
+ 26710 strings out of 475385
+ 520248 string characters out of 2776907
  1056341 words of memory out of 3000000
- 47579 multiletter control sequences out of 15000+600000
- 516603 words of font info for 56 fonts, out of 8000000 for 9000
+ 47609 multiletter control sequences out of 15000+600000
+ 516978 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,7n,104p,632b,745s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C
-:/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C
-:/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:
-/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/
-Users/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/U
-sers/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/U
-sers/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb>
-Output written on rapport.pdf (4 pages, 302219 bytes).
+ 100i,7n,104p,746b,745s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{
+C:/Users/fayez/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C:/U
+sers/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/U
+sers/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Us
+ers/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Use
+rs/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/User
+s/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/User
+s/fayez/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb>
+Output written on rapport.pdf (4 pages, 303293 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
+ 107 PDF objects out of 1000 (max. 8388607)
  15 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
