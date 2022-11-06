@@ -3,6 +3,7 @@
 % Modifications : 06-11-22
 
 \documentclass[12pt]{article}
+%\usepackage{tkiz}
 
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
@@ -15,25 +16,30 @@
 \usepackage{listings}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning}
+
+\tikzstyle{s} = [rectangle,draw = gray!50,align=center,bottom color=lime,top color=white,line width=2pt]
+\tikzstyle{r} = [line width=3pt,blue!50]
 
 %\author{Samuele Giraudo}
 \date{}
 \title{{\bf Programmation avancée et application en {\sf Java}} \\
 	Rapport de projet de débat phase 1 \\
 	{\small L3 Informatique appliquée 2022-2023} \\
+			Groupe de TD 1 \\
 	{\it \small MABROUK Fayez \& AHMED-ZAID Macyl}}
-
-\theoremstyle{definition}
+	
+%\theoremstyle{definition}
 %\newtheorem{Introduction}{Introduction}
 %\new section{Introduction}
 
 
 
-\newcommand{\EnsNat}{\mathbb{N}}
-\newcommand{\La}{{\tt a}}
-\newcommand{\Lb}{{\tt b}}
-\newcommand{\Lc}{{\tt c}}
-\newcommand{\Ld}{{\tt d}}
+%\newcommand{\EnsNat}{\mathbb{N}}
+%\newcommand{\La}{{\tt a}}
+%\newcommand{\Lb}{{\tt b}}
+%\newcommand{\Lc}{{\tt c}}
+%\newcommand{\Ld}{{\tt d}}
 
 % Configuration de listings.
 \lstset{
@@ -55,12 +61,29 @@
 	showstringspaces=true
 }
 
+
+%\usepackage{shapes,arrows,positioning}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-	
+	%\include{Packages}
+	%\include{Format}
+	 %	\begin{figure}[!hbtp]
+	 %	\centering
+	 	%\includegraphics[scale=0.75]{paris.png}
+	 %	%\caption{}
+	 %\end{figure}
 	\maketitle
+	\begin{figure}[!hbtp]
+		\centering
+		\includegraphics[scale=1.5]{debat.PNG}
+		%\caption{}
+	\end{figure}
+%\newpage
+%\renewcommand\contentsname{Sommaire}
+%\setcounter{chapter}{1}
+%\tableofcontents
 	\newpage
 	\section{Introduction}
 	\paragraph {}
@@ -75,6 +98,17 @@
 	\end{itemize}
 	\section{Démarche de programmation}
 	\subsection{Diagramme de classe}
+	%\centering
+	\begin{tikzpicture}
+		\node [s](a) {<<Generic Class>>\\AffichageMenu\\\line(1,0){150}\\Private static Scanner sc\\\line(1,0){150}\\public void menuPrincipal() \\ private void menu2()};
+		\node [below=1cm of a,s](b){<<Specific Class 1>>\\Debat\\\line(1,0){210}\\private boolean adjMatrice[][]\\private int numNoeud\\\line(1,0){210}\\public void addContradiction(int,int)\\public boolean verifContradiction(int,int)\\public String toString()};
+		\node [right=1cm of b,s,yshift=-1.5cm,xshift=-0.5cm](c){<<Specific Class 2>>\\Solution\\\line(1,0){150}\\private ArrayList<String> E\\\line(1,0){150}\\public void ajouteArgument(String)\\public void retireArgument(String)\\public boolean solutionAdmissible(Debat,int)\\public boolean solutionAdmissibleSansErreur(Debat,int)\\private boolean condition2(Debat,int)\\private boolean condition1(Debat,int)\\private boolean condition1SansErreur(Debat,int)\\private boolean condition2SansErreur(Debat,int)\\private boolean verif(int,String,debat)\\public void affichage()};
+		\draw [r] (a)--(b);
+		\draw [r] (a)--(c);
+	
+	\end{tikzpicture}
+
+%\newpage
 	\section{Documentation technique}
 	\subsection{La classe Main}
 	La classe \textbf{main} fait appel seulement à l’affichage du menu.
@@ -98,7 +132,7 @@
 	principales :
 	\begin{itemize}
 		\item [*] \textbf{ajouteArgument} : ajouteArgument : Ajoute un argument dans la liste E (Ensemble des solutions admissibles) en vérifiant si l’argument est déjà dans la liste .
-		\item [*] \textbf{retireargument} :Permet de retirer un argument de l’ensemble.
+		\item [*] \textbf{retireArgument} :Permet de retirer un argument de l’ensemble.
 		\item [*] \textbf{solutionAdmissible} : Permet de vérifier si un argument est une solution admissible
 		cela en exécutant deux méthodes qui permettent de tester si un argument est une
 		solution admissible : 
