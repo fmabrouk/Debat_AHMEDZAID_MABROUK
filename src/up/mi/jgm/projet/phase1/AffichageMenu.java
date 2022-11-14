@@ -27,9 +27,13 @@ public class AffichageMenu {
 				String chaine2 = sc.next();
 				String[] str1 = chaine1.split("A");
 				String[] str2 = chaine2.split("A");
-				g.addContradiction(Integer.parseInt(str1[1]) - 1, Integer.parseInt(str2[1]) - 1);
+				if(Integer.parseInt(str1[1]) > n || Integer.parseInt(str2[1]) > n ){
+					System.out.println("L'argument entree n'est pas valide");
+				}else{
+					g.addContradiction(Integer.parseInt(str1[1]) - 1, Integer.parseInt(str2[1]) - 1);
+				}
 				break;
-			case 2:
+			case 2: 
 				menu2(g,n);
 				break;
 			default:
