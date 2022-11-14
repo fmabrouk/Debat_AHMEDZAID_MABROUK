@@ -1,0 +1,11 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {paragraph}{}{3}{section*.2}%
+\contentsline {section}{\numberline {2}Démarche de programmation}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Diagramme de classe}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Documentation technique}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}La classe Main}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}La classe affichage}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}La classe Debat}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}La classe solution}{5}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Conclusion}{6}{section.4}%
