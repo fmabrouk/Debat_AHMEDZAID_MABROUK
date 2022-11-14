@@ -57,7 +57,7 @@ public class AffichageMenu {
 			case 1:
 				System.out.println("Veuillez entrer le nom d'argument?");
 				String arg = sc.next();
-				sol.AjouteArgument(arg);
+				sol.ajouteArgument(arg);
 				break;
 			case 2:
 				System.out.println("Veuillez entrer l'argument à retirer");

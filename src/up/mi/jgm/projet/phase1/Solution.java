@@ -18,7 +18,7 @@ public class Solution {
 	/**
 	 * fonction permet d'ajouter un argument à la solution
 	 * @param arg l'argument à ajouter*/
-	public  void AjouteArgument(String arg) {
+	public  void ajouteArgument(String arg) {
 		if(E.contains(arg))
 			System.out.println(" Argument "+arg +" déjà dans la solution");
 		else {
