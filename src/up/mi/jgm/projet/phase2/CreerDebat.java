@@ -3,12 +3,14 @@ package up.mi.jgm.projet.phase2;
 import up.mi.jgm.projet.phase1.*;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CreerDebat {
 
-    private static ArrayList<Argument> arguments= new ArrayList<>();
+    private ArrayList<Argument> arguments= new ArrayList<>();
 
     public CreerDebat(){
         arguments=new ArrayList<>();
@@ -29,12 +31,21 @@ public class CreerDebat {
             Debat d = new Debat(tailleGraphe());
             do{
                 String [] contradiction = creerContradiction(ligne);
-                d.addContradiction(getIndexByArgument(contradiction[0]), getIndexByArgument(contradiction[1]));
+                try{
+                    d.addContradiction(getIndexByArgument(contradiction[0]), getIndexByArgument(contradiction[1]));
+                }catch(ArgumentNotDefinedException e){
+                    System.out.println(e.getMessage()); 
+                    System.exit(0);
+                }
                 
             }while((ligne = br.readLine()) != null);
             
-        }catch(Exception e){
-            e.printStackTrace();
+        }catch(FileNotFoundException e){
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+            System.exit(0);
         }
         
     }
@@ -59,14 +70,13 @@ public class CreerDebat {
         return arguments.size();
     }
 
-    public int getIndexByArgument(String str){
+    public int getIndexByArgument(String str) throws ArgumentNotDefinedException{
         for(int i=0 ; i<arguments.size() ; i++){
             if(arguments.get(i).getArg().equals(str)){
                 return arguments.get(i).getIndice();
             }
         }
-        return 0;
+        throw new ArgumentNotDefinedException("Fichier mal formé\nArgument non prédéfini");
     }
 
-    
 }
