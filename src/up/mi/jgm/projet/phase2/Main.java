@@ -7,7 +7,13 @@ public class Main {
     public static void main(String[] args){
         CreerDebat debat = new CreerDebat();
         File f = new File(args[0]);
-		debat.chargerGraphe(f);
+        try{
+            debat.chargerGraphe(f);
+
+        }catch(IllegalArgumentException e){
+            e.printStackTrace();
+        }
+
         AffichageMenu.menuPrincipal(debat);
     }
 }

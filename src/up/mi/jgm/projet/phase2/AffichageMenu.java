@@ -1,19 +1,22 @@
 package up.mi.jgm.projet.phase2;
 
 import java.util.Scanner;
-import up.mi.jgm.projet.phase1.*;
+
 public class AffichageMenu {
     
 	
-	/**
-	 * variable Scanner globale*/
+	
 	private static Scanner sc = new Scanner(System.in);
+	
 	/**
-	 * fonction qui permet d'afficher le menu principal de programme*/
+	 * Méthode qui affiche le menu et exécute les différentes fonctionnalités du projet
+	 * @param d le debat qui a été chargé à partir du fichier graphe
+	 */
 	public static void menuPrincipal(CreerDebat d) {
 		System.out.println("Veuillez entrer votre choix: ");
 		int choix=0;
 		int tailleGraphe= d.tailleGraphe();
+		SolutionAuto s = new SolutionAuto();
 		
 		do{
 			System.out.println("1) Chercher une solution admissible");
@@ -25,6 +28,7 @@ public class AffichageMenu {
 				choix=sc.nextInt();
 				switch(choix){
 					case 1:
+						s.solutionAdmissibleAuto(d, tailleGraphe);
 						break;
 					case 2:
 						break;

@@ -1,12 +1,20 @@
 package up.mi.jgm.projet.phase1;
 
+
 public class Debat {
 	/*
 	 * tableau de deux dimensions pour réprsenter la matrice d'adjacence
 	*/
-	  private  boolean adjMatrice[][];
+	  protected  boolean adjMatrice[][];
 	  
-	  /*
+	  public boolean[][] getAdjMatrice() {
+		return adjMatrice;
+	}
+	public void setAdjMatrice(boolean[][] adjMatrice) {
+		this.adjMatrice = adjMatrice;
+	}
+
+	/*
 	   * nombre de sommets(arguments)
 	  */
 	  private int numNoeud;
@@ -14,11 +22,13 @@ public class Debat {
 	  /*
 	   * Constructeur de la classe graphe
 	  */
-	  public Debat(int numNoeud) {
-	    this.numNoeud = numNoeud;
-	    adjMatrice = new boolean[numNoeud][numNoeud];
+	  public Debat() {
+	    
 	  }
-
+	  public Debat(int numNoeud){
+		this.numNoeud=numNoeud;
+		adjMatrice = new boolean[numNoeud][numNoeud];
+	  }
 	  /**
 	   * fonction permet d'ajouter une contardiction
 	   * @param i l'argument qui contredit
@@ -34,12 +44,8 @@ public class Debat {
 	   * @param i l'argument qui contredit
 	   * @param j l'argument qui subit la contradiction
 	   * @return renvoie true s'il y avait une contardiction et false sinon*/
-	  public boolean verifContradiction(int i,int j) {
-		  if(adjMatrice[i][j] == true) {
-			  return true;
-		  }
-		  return false;
-			  
+	  public boolean isContradiction(int i,int j) {
+		  return adjMatrice[i][j];
 	  }
 
 	  /**

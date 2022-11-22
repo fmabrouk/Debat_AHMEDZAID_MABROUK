@@ -2,6 +2,8 @@ package up.mi.jgm.projet.phase1;
 
 import java.util.Scanner;
 
+import up.mi.jgm.projet.phase2.Argument;
+
 
 public class AffichageMenu {
 	
@@ -60,16 +62,20 @@ public class AffichageMenu {
 			switch(choix1) {
 			case 1:
 				System.out.println("Veuillez entrer le nom d'argument?");
-				String arg = sc.next();
+				String argTemp = sc.next();
+				String[] args = argTemp.split("A");
+				Argument arg = new Argument(Integer.parseInt(args[0]), "A");
 				sol.ajouteArgument(arg);
 				break;
 			case 2:
 				System.out.println("Veuillez entrer l'argument à retirer");
-				String arg1 = sc.next();
-				sol.retireArgument(arg1);
+				argTemp = sc.next();
+				args = argTemp.split("A");
+				arg = new Argument(Integer.parseInt(args[0]), "A");
+				sol.retireArgument(arg);
 				break;
 			case 3:
-				sol.affichage();
+				sol.affichageEnsembleSolution();
 				if(sol.solutionAdmissible(g, n)) {
 					System.out.println("la solution est admissible");
 				} else {
@@ -77,8 +83,8 @@ public class AffichageMenu {
 				}
 				break;
 			case 4:
-				sol.affichage();
-				if(sol.solutionAdmissibleSansErreur(g, n)) {
+				sol.affichageEnsembleSolution();
+				if(sol.solutionAdmissible(g, n)) {
 					System.out.println("la solution est admissible");
 				} else {
 				System.out.println("la solution n'est pas admissible");
