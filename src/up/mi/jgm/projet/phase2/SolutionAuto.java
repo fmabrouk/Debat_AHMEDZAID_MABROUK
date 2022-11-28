@@ -37,7 +37,6 @@ public class SolutionAuto extends Solution{
         
         for(int i=0 ; i<Math.pow(2, tailleGraphe-1) ;i++){
             remplirEnsemble(g.getArguments(),tableVeriteArguments,i);
-
                 if(this.solutionAdmissible(g, tailleGraphe-1) && !this.isSolutionDejaAffiche()){
                         solutionAffiches.add(this.toString());
                         this.affichageEnsembleSolution();

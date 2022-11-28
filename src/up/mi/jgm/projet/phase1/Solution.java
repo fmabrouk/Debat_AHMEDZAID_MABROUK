@@ -93,30 +93,28 @@ public class Solution {
 //    return true;
 //  }
 
-  private boolean condition2(Debat g, int n) {
-	  if(ensembleSolution.size() ==1) {
-		  
-	  } else {
-		  for(int j=0;j < n;j++) {
-			  
-			  for(int i = 0;i<ensembleSolution.size();i++) {
-				  boolean seDefendPas=true;
-				  int k=0;
-				  if(verif2(j,ensembleSolution.get(i),g)) {
-					  while(k<ensembleSolution.size() && seDefendPas) {
-						  if(verif3(ensembleSolution.get(k),j,g))
-							  seDefendPas=false;
-						  else	
-							  k++;
-					  }
-				  }
-			  }  
-		  }
-		  return true;
-	  }
-	 return false;
-	  
+private boolean condition2(Debat g, int n) {
+  for(int i=0 ; i<ensembleSolution.size() ; i++){
+    int k=0; 
+    boolean defense=false;
+    for(int j=0 ; j<n ; j++){
+      if(verif2(j, ensembleSolution.get(i),g)){
+        System.out.println("i et j "+i+j);
+        while(k<ensembleSolution.size() && !defense){
+          if(verif3(ensembleSolution.get(k), j,g)){
+            defense = true;
+          }else{
+            k++;
+          }
+        }
+        if(!defense){
+          return false;
+        }
+      }
+    }
   }
+  return true;
+}
   
 
   /**
@@ -150,7 +148,7 @@ public class Solution {
     int indiceUn = arg1.getIndice();
     int indiceDeux = arg2.getIndice();
     if (
-      g.isContradiction(indiceUn - 1, indiceDeux - 1 )
+      g.isContradiction(indiceUn , indiceDeux )
     ) {
       return true;
     }
@@ -164,7 +162,7 @@ public class Solution {
    * @return renvoie true si n contredit arg et faux sinon*/
   private boolean verif2(int n, Argument arg, Debat g) {
     int indice = arg.getIndice();
-    if (g.isContradiction(n , indice - 1)) {
+    if (g.isContradiction(n , indice )) {
       return true;
     }
     return false;
@@ -177,7 +175,7 @@ public class Solution {
    * @return renvoie true si arg contredit n et faux sinon*/
   private boolean verif3(Argument arg, int n, Debat g) {
     int indice = arg.getIndice();
-    if (g.isContradiction(indice - 1, n)) {
+    if (g.isContradiction(indice , n)) {
       return true;
     }
     return false;
