@@ -66,7 +66,6 @@ public class Solution {
    * @param g la graphe modélisant le débat
    * @param n le nombre d'argument
    * @return renvoie true si c'est vrai et faux sinon*/
-<<<<<<< HEAD
 //  private boolean condition2(Debat g, int n) {
 //    if (ensembleSolution.size() == 1) {
 //      for (int i = 0; i < n; i++) {
@@ -118,35 +117,6 @@ public class Solution {
 	 return false;
 	  
   }
-=======
-  private boolean condition2(Debat g, int n) {
-    if (ensembleSolution.size() == 1) {
-      for (int i = 0; i < n; i++) {
-        for (int j = 0; j < ensembleSolution.size(); j++) {
-          if (verif2(i, ensembleSolution.get(j), g)) {
-            if (!verif3(ensembleSolution.get(j), i, g)) {
-              // System.out.println("l'argument " +ensembleSolution.get(j) +" ne se defend pas contre A" +(i + 1));
-              return false;
-            }
-          }
-        }
-      }
-    } else {
-      for (int i = 0; i < n; i++) {
-        for (int j = 0; j < ensembleSolution.size(); j++) {
-          if (verif2(i, ensembleSolution.get(j), g)) {
-            if (!verif4(n, i, g)) {
-              // System.out.println("l'argument " +ensembleSolution.get(j) +" ne se defend pas contre A" +(i + 1));
-              return false;
-            }
-          }
-        }
-      }
-    }
-    return true;
-  }
-
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2
   
 
   /**
@@ -180,11 +150,7 @@ public class Solution {
     int indiceUn = arg1.getIndice();
     int indiceDeux = arg2.getIndice();
     if (
-<<<<<<< HEAD
       g.isContradiction(indiceUn - 1, indiceDeux - 1 )
-=======
-      g.isContradiction(indiceUn, indiceDeux)
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2
     ) {
       return true;
     }
@@ -198,11 +164,7 @@ public class Solution {
    * @return renvoie true si n contredit arg et faux sinon*/
   private boolean verif2(int n, Argument arg, Debat g) {
     int indice = arg.getIndice();
-<<<<<<< HEAD
     if (g.isContradiction(n , indice - 1)) {
-=======
-    if (g.isContradiction(n, indice)) {
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2
       return true;
     }
     return false;
@@ -215,11 +177,7 @@ public class Solution {
    * @return renvoie true si arg contredit n et faux sinon*/
   private boolean verif3(Argument arg, int n, Debat g) {
     int indice = arg.getIndice();
-<<<<<<< HEAD
     if (g.isContradiction(indice - 1, n)) {
-=======
-    if (g.isContradiction(indice, n)) {
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2
       return true;
     }
     return false;
@@ -231,7 +189,6 @@ public class Solution {
    * @param n l'indice d'argument dans la matrice d'adjacence qui subit la contradiction
    * @param g la matrice d'adjacence qui represente le debat
    * @return renvoie true si arg contredit n et faux sinon*/
-<<<<<<< HEAD
 //  private boolean verif4(int tailleGraphe, int n, Debat g) {
 //    
 //    for (int i = 0; i < tailleGraphe; i++) {
@@ -243,19 +200,6 @@ public class Solution {
 //    }
 //    return false;
 //  }
-=======
-  private boolean verif4(int tailleGraphe, int n, Debat g) {
-    
-    for (int i = 0; i < tailleGraphe; i++) {
-      if (g.isContradiction(i, n)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2
 
   
   /**
@@ -296,8 +240,4 @@ public class Solution {
     return sb.toString();
   }
   
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2

@@ -64,22 +64,14 @@ public class AffichageMenu {
 				System.out.println("Veuillez entrer le nom d'argument?");
 				String argTemp = sc.next();
 				String[] args = argTemp.split("A");
-<<<<<<< HEAD
 				Argument arg = new Argument(Integer.parseInt(args[1]), "A");
-=======
-				Argument arg = new Argument(Integer.parseInt(args[0]), "A");
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2
 				sol.ajouteArgument(arg);
 				break;
 			case 2:
 				System.out.println("Veuillez entrer l'argument à retirer");
 				argTemp = sc.next();
 				args = argTemp.split("A");
-<<<<<<< HEAD
 				arg = new Argument(Integer.parseInt(args[1]), "A");
-=======
-				arg = new Argument(Integer.parseInt(args[0]), "A");
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2
 				sol.retireArgument(arg);
 				break;
 			case 3:
