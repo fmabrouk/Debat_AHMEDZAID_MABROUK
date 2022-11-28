@@ -2,6 +2,8 @@ package up.mi.jgm.projet.phase1;
 
 import java.util.Scanner;
 
+import up.mi.jgm.projet.phase2.Argument;
+
 
 public class AffichageMenu {
 	
@@ -27,9 +29,13 @@ public class AffichageMenu {
 				String chaine2 = sc.next();
 				String[] str1 = chaine1.split("A");
 				String[] str2 = chaine2.split("A");
-				g.addContradiction(Integer.parseInt(str1[1]) - 1, Integer.parseInt(str2[1]) - 1);
+				if(Integer.parseInt(str1[1]) > n || Integer.parseInt(str2[1]) > n ){
+					System.out.println("L'argument entree n'est pas valide");
+				}else{
+					g.addContradiction(Integer.parseInt(str1[1]) - 1, Integer.parseInt(str2[1]) - 1);
+				}
 				break;
-			case 2:
+			case 2: 
 				menu2(g,n);
 				break;
 			default:
@@ -56,25 +62,30 @@ public class AffichageMenu {
 			switch(choix1) {
 			case 1:
 				System.out.println("Veuillez entrer le nom d'argument?");
-				String arg = sc.next();
-				sol.AjouteArgument(arg);
+				String argTemp = sc.next();
+				String[] args = argTemp.split("A");
+				Argument arg = new Argument(Integer.parseInt(args[1]), "A");
+				sol.ajouteArgument(arg);
 				break;
 			case 2:
 				System.out.println("Veuillez entrer l'argument à retirer");
-				String arg1 = sc.next();
-				sol.retireArgument(arg1);
+				argTemp = sc.next();
+				args = argTemp.split("A");
+				arg = new Argument(Integer.parseInt(args[1]), "A");
+				sol.retireArgument(arg);
 				break;
 			case 3:
-				sol.affichage();
+				sol.affichageEnsembleSolution();
 				if(sol.solutionAdmissible(g, n)) {
+					System.out.println(g.toString());
 					System.out.println("la solution est admissible");
 				} else {
 				System.out.println("la solution n'est pas admissible");
 				}
 				break;
 			case 4:
-				sol.affichage();
-				if(sol.solutionAdmissibleSansErreur(g, n)) {
+				sol.affichageEnsembleSolution();
+				if(sol.solutionAdmissible(g, n)) {
 					System.out.println("la solution est admissible");
 				} else {
 				System.out.println("la solution n'est pas admissible");
