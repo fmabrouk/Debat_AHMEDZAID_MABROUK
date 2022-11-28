@@ -32,7 +32,7 @@ public class Argument {
     
     @Override
     public String toString(){
-        return arg+""+indice;
+        return arg+"";
     }
     
     @Override

@@ -99,7 +99,6 @@ private boolean condition2(Debat g, int n) {
     boolean defense=false;
     for(int j=0 ; j<n ; j++){
       if(verif2(j, ensembleSolution.get(i),g)){
-        System.out.println("i et j "+i+j);
         while(k<ensembleSolution.size() && !defense){
           if(verif3(ensembleSolution.get(k), j,g)){
             defense = true;
