@@ -47,26 +47,41 @@ public class SolutionAuto extends Solution{
 			 System.out.println("ensemble prefere =  ensemble vide");
 		 }
 		 for(int i=1;i<solutionAdmissibles.size();i++) {
+			 
+			 if( i == solutionAdmissibles.size() - 1) {
+				 System.out.println("ensemble prefere = "+solutionAdmissibles.get(i));
+			 }
 			 for(int j = 1;j<solutionAdmissibles.size();j++) {
+				 
 				 if(solutionAdmissibles.get(i) != (solutionAdmissibles.get(j))) {
-					 supp(solutionAdmissibles.get(i),solutionAdmissibles.get(j));
-					System.out.println("ensemble prefere = "+ solutionAdmissibles.get(i));
+					 if(!inclusion(solutionAdmissibles.get(i),solutionAdmissibles.get(j))) {
+						 //System.out.println("ensemble prefere = "+ solutionAdmissibles.get(i));
+						 
+						 if(j == solutionAdmissibles.size() - 1) {
+							 System.out.println("ensemble prefere = "+solutionAdmissibles.get(i));
+						 }
+					 }
+					 else {
+						 return false;
+					 }
+					 
 				 }
 			 }
+			 
 		 }
 	 }
 	 
-	private void supp(String s1,String s2) {
-		System.out.println("s1 : "+s1);
-		System.out.println("s2 : "+s2);
-		for(int i = 0;i<s1.length();i++) {
-			System.out.println("s1.charAt("+i+") : "+s1.charAt(i));
-			for(int j=0;j<s2.length();j++) {
-				if(s1.charAt(i) == s2.charAt(j)) {
-					System.out.println("");
-				}
+	private boolean inclusion(String s1,String s2) {
+		
+//			System.out.println("s1.charAt("+i+") : "+s1.charAt(i));
+//		System.out.println("s2 = "+s2);
+//		System.out.println("s1 = "+s1);
+			if(s2.contains(s1)) {
+				
+				return true;
 			}
-		}
+			return false;
+		
 	}
 	 
     /**
