@@ -50,15 +50,31 @@ public class SolutionAuto extends Solution{
         if(!solutionAffiches.isEmpty()){
 
            // System.out.println("ensemble vide");
-        	if(j==solutionAffiches.size())
+        	if(j==solutionAffiches.size()) {
         		j = 0;
-        	if(j == 0)
+        	}
+        		
+        	if(j == 0) {
         		System.out.println("ensemble vide");
- 
-            System.out.println(solutionAffiches.get(j));
-            j++;
-            
-
+        		
+        	}
+        	
+        	
+        	if(solutionAffiches.get(j).length() > 1) {
+        		for(int k =0;k <solutionAffiches.get(j).length();k++) {
+        			if(k==0) {
+        				System.out.print(solutionAffiches.get(j).charAt(k));
+        			}
+        			else {
+        			System.out.print(","+solutionAffiches.get(j).charAt(k));
+        			}
+        		}
+        		 System.out.println();
+        	} else  {
+        		System.out.println(solutionAffiches.get(j));
+        	}
+        	
+        	j++;
            // System.out.println("Solution admissible = ["+solutionAffiches.get(0)+"]");
 
             return true;
