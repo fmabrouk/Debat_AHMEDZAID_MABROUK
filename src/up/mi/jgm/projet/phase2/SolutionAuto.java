@@ -48,7 +48,7 @@ public class SolutionAuto extends Solution{
         //System.out.println(solutionAffiches);
         
         if(!solutionAffiches.isEmpty()){
-<<<<<<< HEAD
+
            // System.out.println("ensemble vide");
         	if(j==solutionAffiches.size())
         		j = 0;
@@ -58,9 +58,9 @@ public class SolutionAuto extends Solution{
             System.out.println(solutionAffiches.get(j));
             j++;
             
-=======
-            System.out.println("Solution admissible = ["+solutionAffiches.get(0)+"]");
->>>>>>> 83696112eed9ff8897ff5a3c26f84fc909cf66cd
+
+           // System.out.println("Solution admissible = ["+solutionAffiches.get(0)+"]");
+
             return true;
         }
 
@@ -89,8 +89,4 @@ public class SolutionAuto extends Solution{
     
 
     
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 83696112eed9ff8897ff5a3c26f84fc909cf66cd

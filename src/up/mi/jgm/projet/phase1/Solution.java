@@ -248,8 +248,4 @@ private boolean condition2(Debat g, int n) {
     return sb.toString();
   }
   
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 83696112eed9ff8897ff5a3c26f84fc909cf66cd
