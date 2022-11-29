@@ -5,7 +5,9 @@ import up.mi.jgm.projet.phase1.*;
 public class SolutionAuto extends Solution{
 
     private ArrayList<String> solutionAffiches;
-
+    
+    private int j = 0;
+    
     public SolutionAuto(){
         super();
         solutionAffiches=new ArrayList<>();
@@ -32,23 +34,29 @@ public class SolutionAuto extends Solution{
      * @param tailleGraphe la taille du graphe
      * @return true si une solution a été trouvée sinon false
      */
-    public boolean solutionAdmissibleAuto(CreerDebat g, int tailleGraphe){
-        Boolean[][] tableVeriteArguments = TableVerite.generateTruthTable(tailleGraphe-1);
+    public boolean solutionAdmissibleAuto(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite){
         
-        for(int i=0 ; i<Math.pow(2, tailleGraphe-1) ;i++){
-            remplirEnsemble(g.getArguments(),tableVeriteArguments,i);
-
+        for(int i=0 ; i<Math.pow(2, tailleGraphe) ;i++){
+            remplirEnsemble(g.getArguments(),tableVerite,i);
                 if(this.solutionAdmissible(g, tailleGraphe-1) && !this.isSolutionDejaAffiche()){
                         solutionAffiches.add(this.toString());
                         this.affichageEnsembleSolution();
                         return true;
                 }
-            
+               
         }
-
+        //System.out.println(solutionAffiches);
+        
         if(!solutionAffiches.isEmpty()){
-            System.out.println("Solution admissible = ["+solutionAffiches.get(0)+"]");
-            solutionAffiches.remove(0);
+           // System.out.println("ensemble vide");
+        	if(j==solutionAffiches.size())
+        		j = 0;
+        	if(j == 0)
+        		System.out.println("ensemble vide");
+ 
+            System.out.println(solutionAffiches.get(j));
+            j++;
+            
             return true;
         }
 
@@ -65,17 +73,16 @@ public class SolutionAuto extends Solution{
     private void remplirEnsemble(ArrayList<Argument> args,Boolean[][] tableVerite,int ligne){
         
         this.getEnsembleSolution().clear();
-        for(int i=0 ; i<args.size()-1 ; i++ ){
+        for(int i=0 ; i<args.size() ; i++ ){
             if(tableVerite[ligne][i] == true){
                 this.ajouteArgument(args.get(i));
             }
         }
-    
+        
+        
     }
+    
+    
 
     
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2

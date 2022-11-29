@@ -17,7 +17,8 @@ public class AffichageMenu {
 		int choix=0;
 		int tailleGraphe= d.tailleGraphe();
 		SolutionAuto s = new SolutionAuto();
-		
+		Boolean[][] tableVeriteArguments = TableVerite.generateTruthTable(tailleGraphe);
+
 		do{
 			System.out.println("1) Chercher une solution admissible");
 			System.out.println("2) Chercher une solution preferee");
@@ -28,7 +29,7 @@ public class AffichageMenu {
 				choix=sc.nextInt();
 				switch(choix){
 					case 1:
-						s.solutionAdmissibleAuto(d, tailleGraphe);
+						s.solutionAdmissibleAuto(d, tailleGraphe,tableVeriteArguments);
 						break;
 					case 2:
 						break;
@@ -49,10 +50,4 @@ public class AffichageMenu {
 	}
 	
 	
-<<<<<<< HEAD
 }
-=======
-}
-
-
->>>>>>> a3c2ea1b9e7f3e25be6ca6ea3612f593a738a6e2
