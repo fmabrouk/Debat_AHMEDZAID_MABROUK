@@ -214,10 +214,11 @@ private boolean condition2(Debat g, int n) {
 	  if(ensembleSolution.isEmpty()){
 		  System.out.print("ensemble vide");
 	  }
+
 	  System.out.println();
   }
 
-
+ 
    
   /**
    * Méthode qui convertit l'ensemble de solution en String
@@ -248,4 +249,7 @@ private boolean condition2(Debat g, int n) {
     return sb.toString();
   }
   
+  public void affiche() {
+	  System.out.println(ensembleSolution);
+  }
 }

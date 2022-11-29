@@ -5,12 +5,14 @@ import up.mi.jgm.projet.phase1.*;
 public class SolutionAuto extends Solution{
 
     private ArrayList<String> solutionAffiches;
+    private ArrayList<String> solutionAdmissibles;
     
     private int j = 0;
     
     public SolutionAuto(){
         super();
         solutionAffiches=new ArrayList<>();
+       solutionAdmissibles = new ArrayList<>();
     }
 
 
@@ -27,7 +29,46 @@ public class SolutionAuto extends Solution{
         return false;
     }
 
-
+	 public void solutionPrefereeAuto(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite){
+	        
+	        for(int i=0 ; i<Math.pow(2, tailleGraphe) ;i++){
+	            remplirEnsemble(g.getArguments(),tableVerite,i);
+	                if(this.solutionAdmissible(g, tailleGraphe-1)){
+	                		this.ensembleSoltoString();
+	                        solutionAdmissibles.add(this.toString());
+	                }
+	        }
+	        affichage(solutionAdmissibles);  
+	 }
+	 
+	 public void solutionPrefere(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite) {
+		 this.solutionPrefereeAuto(g, tailleGraphe, tableVerite);
+		 if(solutionAdmissibles.size() == 1) {
+			 System.out.println("ensemble prefere =  ensemble vide");
+		 }
+		 for(int i=1;i<solutionAdmissibles.size();i++) {
+			 for(int j = 1;j<solutionAdmissibles.size();j++) {
+				 if(solutionAdmissibles.get(i) != (solutionAdmissibles.get(j))) {
+					 supp(solutionAdmissibles.get(i),solutionAdmissibles.get(j));
+					System.out.println("ensemble prefere = "+ solutionAdmissibles.get(i));
+				 }
+			 }
+		 }
+	 }
+	 
+	private void supp(String s1,String s2) {
+		System.out.println("s1 : "+s1);
+		System.out.println("s2 : "+s2);
+		for(int i = 0;i<s1.length();i++) {
+			System.out.println("s1.charAt("+i+") : "+s1.charAt(i));
+			for(int j=0;j<s2.length();j++) {
+				if(s1.charAt(i) == s2.charAt(j)) {
+					System.out.println("");
+				}
+			}
+		}
+	}
+	 
     /**
      * Méthode qui permet de rechrcher une solution admissible 
      * @param g le debat qui a été chargé a partir du fichier "graphe"
@@ -45,6 +86,7 @@ public class SolutionAuto extends Solution{
                 }
                
         }
+        
         //System.out.println(solutionAffiches);
         
         if(!solutionAffiches.isEmpty()){
@@ -102,6 +144,11 @@ public class SolutionAuto extends Solution{
         
     }
     
+    private void affichage(ArrayList<String> E) {
+    	System.out.println("E = " + E);
+    }
+    
+   
     
 
     
