@@ -47,25 +47,28 @@ public class SolutionAuto extends Solution{
 			 System.out.println("ensemble prefere =  ensemble vide");
 		 }
 		 for(int i=1;i<solutionAdmissibles.size();i++) {
-			 
+			 boolean defense = false;
 			 if( i == solutionAdmissibles.size() - 1) {
 				 System.out.println("ensemble prefere = "+solutionAdmissibles.get(i));
 			 }
 			 for(int j = 1;j<solutionAdmissibles.size();j++) {
-				 
-				 if(solutionAdmissibles.get(i) != (solutionAdmissibles.get(j))) {
-					 if(!inclusion(solutionAdmissibles.get(i),solutionAdmissibles.get(j))) {
-						 //System.out.println("ensemble prefere = "+ solutionAdmissibles.get(i));
-						 
-						 if(j == solutionAdmissibles.size() - 1) {
-							 System.out.println("ensemble prefere = "+solutionAdmissibles.get(i));
+				 if(defense == false) {
+					 if(solutionAdmissibles.get(i) != (solutionAdmissibles.get(j))) {
+						 if(!inclusion(solutionAdmissibles.get(i),solutionAdmissibles.get(j))) {
+							 //System.out.println("ensemble prefere = "+ solutionAdmissibles.get(i));
+							 
+							 if(j == solutionAdmissibles.size() - 1) {
+								 System.out.println("ensemble prefere = "+solutionAdmissibles.get(i));
+							 }
 						 }
+						 else {
+							 //return false;
+							 defense = true;
+						 }
+						 
 					 }
-					 else {
-						 return false;
-					 }
-					 
 				 }
+				
 			 }
 			 
 		 }
