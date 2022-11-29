@@ -117,4 +117,8 @@ public class CreerDebat extends Debat {
         throw new ArgumentNotDefinedException("Fichier mal formé\nArgument non prédéfini");
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 83696112eed9ff8897ff5a3c26f84fc909cf66cd

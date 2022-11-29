@@ -16,4 +16,8 @@ public class Main {
 
         AffichageMenu.menuPrincipal(debat);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 83696112eed9ff8897ff5a3c26f84fc909cf66cd
