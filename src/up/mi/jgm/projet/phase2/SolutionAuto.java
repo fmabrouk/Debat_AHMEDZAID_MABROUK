@@ -55,7 +55,7 @@ public class SolutionAuto extends Solution{
         	}
         		
         	if(j == 0) {
-        		System.out.println("ensemble vide");
+        		System.out.print("ensemble vide");
         		
         	}
         	

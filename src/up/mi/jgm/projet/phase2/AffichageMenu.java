@@ -30,6 +30,7 @@ public class AffichageMenu {
 				switch(choix){
 					case 1:
 						s.solutionAdmissibleAuto(d, tailleGraphe,tableVeriteArguments);
+						//System.out.println(s.toString());
 						break;
 					case 2:
 						break;
