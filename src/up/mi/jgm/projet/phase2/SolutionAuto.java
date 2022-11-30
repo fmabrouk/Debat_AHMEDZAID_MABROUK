@@ -102,7 +102,7 @@ public class SolutionAuto extends Solution{
         
         for(int i=0 ; i<Math.pow(2, tailleGraphe) ;i++){
             remplirEnsemble(g.getArguments(),tableVerite,i);
-                if(this.solutionAdmissible(g, tailleGraphe-1) && !this.isSolutionDejaAffiche()){
+                if(this.solutionAdmissible(g, tailleGraphe) && !this.isSolutionDejaAffiche()){
                         solutionAffiches.add(this.toString());
                         this.affichageEnsembleSolution();
                         return true;
