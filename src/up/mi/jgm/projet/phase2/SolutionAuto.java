@@ -38,18 +38,20 @@ public class SolutionAuto extends Solution{
 	                        solutionAdmissibles.add(this.toString());
 	                }
 	        }
-	        affichage(solutionAdmissibles);  
+	        //affichage(solutionAdmissibles);  
 	 }
 	 
 	 public void solutionPrefere(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite) {
 		 this.solutionPrefereeAuto(g, tailleGraphe, tableVerite);
 		 if(solutionAdmissibles.size() == 1) {
 			 System.out.println("ensemble prefere =  ensemble vide");
+			 
 		 }
 		 for(int i=1;i<solutionAdmissibles.size();i++) {
 			 boolean defense = false;
 			 if( i == solutionAdmissibles.size() - 1) {
 				 System.out.println("ensemble prefere = "+solutionAdmissibles.get(i));
+				 
 			 }
 			 for(int j = 1;j<solutionAdmissibles.size();j++) {
 				 if(defense == false) {
@@ -59,6 +61,7 @@ public class SolutionAuto extends Solution{
 							 
 							 if(j == solutionAdmissibles.size() - 1) {
 								 System.out.println("ensemble prefere = "+solutionAdmissibles.get(i));
+								 
 							 }
 						 }
 						 else {
@@ -72,6 +75,7 @@ public class SolutionAuto extends Solution{
 			 }
 			 
 		 }
+		
 	 }
 	 
 	private boolean inclusion(String s1,String s2) {
@@ -87,6 +91,7 @@ public class SolutionAuto extends Solution{
 		
 	}
 	 
+	
     /**
      * Méthode qui permet de rechrcher une solution admissible 
      * @param g le debat qui a été chargé a partir du fichier "graphe"
@@ -103,6 +108,7 @@ public class SolutionAuto extends Solution{
                         return true;
                 }
                
+            
         }
         
         //System.out.println(solutionAffiches);
@@ -162,11 +168,8 @@ public class SolutionAuto extends Solution{
         
     }
     
-    private void affichage(ArrayList<String> E) {
-    	System.out.println("E = " + E);
-    }
     
-   
+    
     
 
     
