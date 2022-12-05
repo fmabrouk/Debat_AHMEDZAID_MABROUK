@@ -36,6 +36,7 @@ public class AffichageMenu {
 						s.solutionPrefere(d, tailleGraphe, tableVeriteArguments);
 						break;
 					case 3:
+						s.sauvegarderSolution();
 						break;
 					case 4:
 						break;

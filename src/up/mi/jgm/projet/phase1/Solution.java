@@ -161,7 +161,7 @@ private boolean condition2(Debat g, int n) {
 		  
 	  }
 	  if(ensembleSolution.isEmpty()){
-		  System.out.print("ensemble vide");
+		  System.out.print(" ");
 	  }
 
 	  System.out.println();
