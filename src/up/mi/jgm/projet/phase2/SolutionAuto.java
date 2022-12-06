@@ -16,7 +16,6 @@ public class SolutionAuto extends Solution{
 	private String derniereSolutionAffiche;
 	private String path;
     
-    private int j = 0;
     
     public SolutionAuto(){
     	solutionAdmissibles = new ArrayList<>();
@@ -44,6 +43,7 @@ public class SolutionAuto extends Solution{
 			for(int i=1;i<solutionAdmissibles.size();i++) {
 				boolean inclus = false;
 				j=1;
+				System.out.println("je teste "+solutionAdmissibles.get(i));
 				while(j<solutionAdmissibles.size() && !inclus){
 						if(!solutionAdmissibles.get(i).equals(solutionAdmissibles.get(j))) {
 							if(inclusion(solutionAdmissibles.get(i),solutionAdmissibles.get(j))) {
@@ -58,6 +58,7 @@ public class SolutionAuto extends Solution{
 			}
 			
 		}
+		
 		affichageSolution(solutionPreferees);
 	}
 
@@ -101,7 +102,7 @@ public class SolutionAuto extends Solution{
 
 	private void affichageSolution(ArrayList<String> sol){
 		
-		
+		int j=0;
 		String[] arguments = sol.get(j).split(" ");
 		if(arguments.length == 1){
 			System.out.println(arguments[0]);
@@ -115,20 +116,6 @@ public class SolutionAuto extends Solution{
 		derniereSolutionAffiche=sol.get(j);
 		sol.remove(j);
 		
-		// if(sol.get(j).length() > 1) {
-		// 	for(int k =0;k <sol.get(j).length();k++) {
-		// 		if(k==0) {
-		// 			System.out.print(sol.get(j).charAt(k));
-		// 		}
-		// 		else {
-		// 		System.out.print(","+sol.get(j).charAt(k));
-		// 		}
-		// 	}
-		// 	System.out.println();
-		// }else{
-		// 	System.out.println(sol.get(j));
-		// }
-		
 	}
 	
 	/**
@@ -138,8 +125,27 @@ public class SolutionAuto extends Solution{
 	 * @return true si S1 est inclus dans S2
 	 */
 	private boolean inclusion(String s1,String s2) {
-		if(s2.contains(s1)) {	
-			return true;
+		int i=0;
+		int j=0;
+		boolean inclus=false;
+		if(s2.length() > s1.length()){
+			String[] s1Split = s1.split(" ");
+			String[] s2Split = s2.split(" ");
+			while(i<s1Split.length){
+				inclus=false;
+				j=0;
+				while(j<s2Split.length && !inclus){
+					if(s1Split[i].equals(s2Split[j])){
+							inclus = true;
+					}
+					j++;
+				}
+				i++;
+			}
+			if(inclus){
+				return true;
+			}else
+				return false;
 		}
 		return false;
 	}

@@ -61,9 +61,9 @@ public class Solution {
 
 
 private boolean condition2(Debat g, int n) {
+  
   for(int i=0 ; i<ensembleSolution.size() ; i++){
-    
-    for(int j=0 ; j<n ; j++){
+    for(int j=0 ; j<=n ; j++){
       int k=0; 
       boolean defense=false;
       if(verif2(j, ensembleSolution.get(i),g)){
