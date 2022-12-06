@@ -47,6 +47,7 @@ public class CreerDebat extends Debat {
                 else if(ligne.startsWith("contradiction")){
                     String [] contradiction = parseContradiction(ligne);
                     try{
+                        System.out.println("contradiction une "+contradiction[1]);
                         this.addContradiction(getIndexByArgument(contradiction[0]), getIndexByArgument(contradiction[1]));
                     }catch(ArgumentNotDefinedException e){
                         System.out.println(e.getMessage()); 
@@ -87,7 +88,8 @@ public class CreerDebat extends Debat {
     private String[] parseContradiction(String ligne){
         String [] argumentSplit = new String[3];
         argumentSplit = ligne.split("\\(");
-        String sbstrContradicton = argumentSplit[1].substring(0,3);
+        String sbstrContradicton = argumentSplit[1].substring(0,argumentSplit[1].length()-1);
+        System.out.println("sbrstrcontradiction "+sbstrContradicton);
         argumentSplit = sbstrContradicton.split(",");
         return argumentSplit;
     }

@@ -59,45 +59,13 @@ public class Solution {
     return false;
   }
 
-  
-
-  /**
-   * fonction qui permet de vérifier la condition 2 de la solution admissible
-   * @param g la graphe modélisant le débat
-   * @param n le nombre d'argument
-   * @return renvoie true si c'est vrai et faux sinon*/
-//  private boolean condition2(Debat g, int n) {
-//    if (ensembleSolution.size() == 1) {
-//      for (int i = 0; i < n; i++) {
-//        for (int j = 0; j < ensembleSolution.size(); j++) {
-//          if (verif2(i, ensembleSolution.get(j), g)) {
-//            if (!verif3(ensembleSolution.get(j), i, g)) {
-//              // System.out.println("l'argument " +ensembleSolution.get(j) +" ne se defend pas contre A" +(i + 1));
-//              return false;
-//            }
-//          }
-//        }
-//      }
-//    } else {
-//      for (int i = 0; i < n; i++) {
-//        for (int j = 0; j < ensembleSolution.size(); j++) {
-//          if (verif2(i, ensembleSolution.get(j), g)) {
-//            if (!verif4(n, i, g)) {
-//              // System.out.println("l'argument " +ensembleSolution.get(j) +" ne se defend pas contre A" +(i + 1));
-//              return false;
-//            }
-//          }
-//        }
-//      }
-//    }
-//    return true;
-//  }
 
 private boolean condition2(Debat g, int n) {
   for(int i=0 ; i<ensembleSolution.size() ; i++){
-    int k=0; 
-    boolean defense=false;
+    
     for(int j=0 ; j<n ; j++){
+      int k=0; 
+      boolean defense=false;
       if(verif2(j, ensembleSolution.get(i),g)){
         while(k<ensembleSolution.size() && !defense){
           if(verif3(ensembleSolution.get(k), j,g)){
@@ -181,25 +149,6 @@ private boolean condition2(Debat g, int n) {
   }
 
   /**
-   * fonction permet de vérifier s'il existe une contradiction entre arg et n
-   * @param tailleGraphe taille du graphe
-   * @param n l'indice d'argument dans la matrice d'adjacence qui subit la contradiction
-   * @param g la matrice d'adjacence qui represente le debat
-   * @return renvoie true si arg contredit n et faux sinon*/
-//  private boolean verif4(int tailleGraphe, int n, Debat g) {
-//    
-//    for (int i = 0; i < tailleGraphe; i++) {
-////    	System.out.println(" i = "+ i);
-////    	System.out.println("n = "+ n);
-//      if (g.isContradiction(i, n)) {
-//        return true;
-//      }
-//    }
-//    return false;
-//  }
-
-  
-  /**
    * Méthode qui affiche l'ensemble de solution admissible
    */
   public void affichageEnsembleSolution() {
@@ -212,7 +161,7 @@ private boolean condition2(Debat g, int n) {
 		  
 	  }
 	  if(ensembleSolution.isEmpty()){
-		  System.out.print("ensemble vide");
+		  System.out.print(" ");
 	  }
 
 	  System.out.println();
@@ -227,12 +176,13 @@ private boolean condition2(Debat g, int n) {
   public String ensembleSoltoString(){
 
     String tempStr = ensembleSolution.toString().substring(1,ensembleSolution.toString().length()-1);
-    String[] chaineTemp = tempStr.split(", ");
+    tempStr = tempStr.replaceAll("\\s", ""); 
+    //String[] chaineTemp = tempStr.split(", ");
     StringBuilder sb = new StringBuilder();
-    for(int i=0 ; i<chaineTemp.length;i++){
-      sb.append(chaineTemp[i]);
-    }
-
+//    for(int i=0 ; i<chaineTemp.length;i++){
+//      sb.append(chaineTemp[i]);
+//    }
+    sb.append(tempStr);
     return sb.toString();
   }
 
@@ -242,8 +192,13 @@ private boolean condition2(Debat g, int n) {
     StringBuilder sb = new StringBuilder();
 
     for(int i=0 ; i<ensembleSolution.size() ; i++){
-      sb.append(ensembleSolution.get(i).toString());
-
+    	
+      if(i==0) {
+    	  sb.append(ensembleSolution.get(i).toString());
+		}
+		else {
+			sb.append(","+ensembleSolution.get(i).toString());
+		}
     }
 
     return sb.toString();
