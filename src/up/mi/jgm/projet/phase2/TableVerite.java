@@ -24,4 +24,7 @@ public class TableVerite {
 			}
 			return truthTable;
 		}
+
+		
 }
+// Code récupéré https://github.com/youssefAli11997/Truth-Table-Generator/blob/master/Truth-Table-Generator/src/Model/TruthTableHandler.java

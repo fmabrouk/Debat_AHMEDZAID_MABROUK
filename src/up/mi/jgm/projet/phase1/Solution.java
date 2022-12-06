@@ -168,30 +168,13 @@ private boolean condition2(Debat g, int n) {
   }
 
  
-   
-  /**
-   * Méthode qui convertit l'ensemble de solution en String
-   * @return l'ensemble de solution en chaine de caractère
-   */
-  public String ensembleSoltoString(){
-
-    String tempStr = ensembleSolution.toString().substring(1,ensembleSolution.toString().length()-1);
-    String[] chaineTemp = tempStr.split(", ");
-    StringBuilder sb = new StringBuilder();
-    for(int i=0 ; i<chaineTemp.length;i++){
-      sb.append(chaineTemp[i]);
-    }
-
-    return sb.toString();
-  }
-
   
   @Override
   public String toString(){
     StringBuilder sb = new StringBuilder();
 
     for(int i=0 ; i<ensembleSolution.size() ; i++){
-      sb.append(ensembleSolution.get(i).toString());
+      sb.append(ensembleSolution.get(i).toString()+" ");
 
     }
 

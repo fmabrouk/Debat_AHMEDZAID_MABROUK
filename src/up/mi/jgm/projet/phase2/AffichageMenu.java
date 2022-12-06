@@ -19,6 +19,7 @@ public class AffichageMenu {
 		SolutionAuto s = new SolutionAuto();
 		
 		Boolean[][] tableVeriteArguments = TableVerite.generateTruthTable(tailleGraphe);
+		
 
 		do{
 			System.out.println("1) Chercher une solution admissible");
