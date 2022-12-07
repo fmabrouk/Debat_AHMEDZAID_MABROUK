@@ -190,14 +190,15 @@ public class SolutionAuto extends Solution{
 	private void affichageSolutionFichier(){
 		StringBuilder sb = new StringBuilder();
 		if(derniereSolutionAffiche.length() > 1){
-			for(int k =0;k <derniereSolutionAffiche.length();k++) {
-				if(k==0) {
-					sb.append(derniereSolutionAffiche.charAt(k));	
+			String[] arguments = derniereSolutionAffiche.split(" ");	
+			sb.append(arguments[0]);
+			if(arguments.length > 1){
+				for(int i=1 ; i<arguments.length ; i++){
+					sb.append(","+arguments[i]);
 				}
-				else {
-					sb.append(","+derniereSolutionAffiche.charAt(k));
-				}
+				sb.append("\n");
 			}
+			
 			derniereSolutionAffiche = sb.toString();
 
 		}
