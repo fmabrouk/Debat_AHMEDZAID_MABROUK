@@ -129,6 +129,7 @@ public class SolutionAuto extends Solution{
 		int j=0;
 		boolean inclus=false;
 		if(s2.length() > s1.length()){
+			System.out.println(s1+" "+s2);
 			String[] s1Split = s1.split(" ");
 			String[] s2Split = s2.split(" ");
 			while(i<s1Split.length){
@@ -139,6 +140,9 @@ public class SolutionAuto extends Solution{
 							inclus = true;
 					}
 					j++;
+				}
+				if(inclus==false){
+					return false;
 				}
 				i++;
 			}
