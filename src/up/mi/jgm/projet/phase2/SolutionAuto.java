@@ -36,10 +36,10 @@ public class SolutionAuto extends Solution{
 	 
 
 	/**
-	 * 
-	 * @param g
-	 * @param tailleGraphe
-	 * @param tableVerite
+	 * Recherche une solution preferee
+	 * @param g graphe de débat
+	 * @param tailleGraphe nombre de sommet
+	 * @param tableVerite table vérité générée en fonction du nb arguemnts
 	 */
 	public void solutionPrefere(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite) {
 		int j=0;
@@ -68,7 +68,7 @@ public class SolutionAuto extends Solution{
 	}
 
 	/**
-	 * 
+	 * Permet de sauvegarder une solution de un fichier 
 	 */
 	public void sauvegarderSolution(){
 
@@ -98,6 +98,13 @@ public class SolutionAuto extends Solution{
 		}
 	}
 
+	
+	/** 
+	 * Permet de remplir l'ensemble a tester a partir de la table de vérité 
+	 * @param g le graphe du débat
+	 * @param tailleGraphe le nombre de sommets
+	 * @param tableVerite table vérité générée en fonction du nombre d'arguments
+	 */
 	private void remplirSolutionAdmissible(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite){
 	    solutionAdmissibles.clear();
 	    for(int i=0 ; i<Math.pow(2, tailleGraphe) ;i++){
@@ -137,7 +144,6 @@ public class SolutionAuto extends Solution{
 		int j=0;
 		boolean inclus=false;
 		if(s2.length() > s1.length()){
-			System.out.println(s1+" "+s2);
 			String[] s1Split = s1.split(" ");
 			String[] s2Split = s2.split(" ");
 			while(i<s1Split.length){
@@ -154,10 +160,7 @@ public class SolutionAuto extends Solution{
 				}
 				i++;
 			}
-			if(inclus){
-				return true;
-			}else
-				return false;
+			return true;
 		}
 		return false;
 	}

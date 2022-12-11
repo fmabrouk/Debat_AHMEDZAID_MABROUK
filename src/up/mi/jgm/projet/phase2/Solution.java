@@ -17,7 +17,7 @@ public class Solution {
   }
 
   /**
-   * Cpnstructeur de la classe solution*/
+   * Constructeur de la classe solution*/
   public Solution() {
     ensembleSolution = new ArrayList<Argument>();
   }
@@ -28,8 +28,6 @@ public class Solution {
   public void ajouteArgument(Argument arg) {
     if (!ensembleSolution.contains(arg))
       ensembleSolution.add(arg);
-
-     
   }
 
   /**
@@ -57,6 +55,13 @@ public class Solution {
   }
 
 
+
+/**
+ * Méthode qui vérifie est ce que tous les elemnts de l'ensemble se défendent
+ * @param g Le graphe qui représente le débat
+ * @param n le nombre d'arguments
+ * @return TRUE si tosu les arguments de l'ensmeble se défendent false sinon
+ */
 private boolean condition2(Debat g, int n) {
   
   for(int i=0 ; i<ensembleSolution.size() ; i++){
@@ -82,18 +87,13 @@ private boolean condition2(Debat g, int n) {
   
 
   /**
-   * fonction qui permet de vérifier la condition 1 de la solution admissible
-   * @param g la garphe modélisant le débat
+   * fonction qui permet de vérifier qu'il n'existe pas de contradiction interne
+   * @param g la graphe modélisant le débat
    * @return renvoie true si c'est vrai et faux sinon*/
   private boolean condition1(Debat g) {
     for (int i = 0; i < ensembleSolution.size(); i++) {
       for (int j = 0; j < ensembleSolution.size(); j++) {
         if (verif1(ensembleSolution.get(i), ensembleSolution.get(j), g)) {
-          // System.out.println( "Il existe une contradiction entre " + ensembleSolution.get(i) + " et " + ensembleSolution.get(j));
-          return false;
-        }
-        if (verif1(ensembleSolution.get(j), ensembleSolution.get(i), g)) {
-          // System.out.println("Il existe une contradiction entre " + ensembleSolution.get(j) + " et " + ensembleSolution.get(i));
           return false;
         }
       }
