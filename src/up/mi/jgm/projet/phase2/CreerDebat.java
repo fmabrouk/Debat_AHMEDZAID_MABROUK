@@ -1,6 +1,5 @@
 package up.mi.jgm.projet.phase2;
 
-import up.mi.jgm.projet.phase1.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;

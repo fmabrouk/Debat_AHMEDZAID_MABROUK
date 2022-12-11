@@ -1,4 +1,4 @@
-package up.mi.jgm.projet.phase1;
+package up.mi.jgm.projet.phase2;
 
 
 public class Debat {

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import up.mi.jgm.projet.phase1.*;
 public class SolutionAuto extends Solution{
 
     private ArrayList<String> solutionAdmissibles;
@@ -35,6 +34,13 @@ public class SolutionAuto extends Solution{
         affichageSolution(solutionAdmissibles);
     }
 	 
+
+	/**
+	 * 
+	 * @param g
+	 * @param tailleGraphe
+	 * @param tableVerite
+	 */
 	public void solutionPrefere(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite) {
 		int j=0;
 		if(solutionPreferees.isEmpty()){
@@ -43,7 +49,6 @@ public class SolutionAuto extends Solution{
 			for(int i=1;i<solutionAdmissibles.size();i++) {
 				boolean inclus = false;
 				j=1;
-				System.out.println("je teste "+solutionAdmissibles.get(i));
 				while(j<solutionAdmissibles.size() && !inclus){
 						if(!solutionAdmissibles.get(i).equals(solutionAdmissibles.get(j))) {
 							if(inclusion(solutionAdmissibles.get(i),solutionAdmissibles.get(j))) {
@@ -62,6 +67,9 @@ public class SolutionAuto extends Solution{
 		affichageSolution(solutionPreferees);
 	}
 
+	/**
+	 * 
+	 */
 	public void sauvegarderSolution(){
 
 		if(solutionAdmissibles.isEmpty()){
@@ -170,6 +178,10 @@ public class SolutionAuto extends Solution{
         }   
 	}
 
+	/**
+	 * Permet de trouver le path du fichier entre par l'utilisateur
+	 * @param sc l'entrée de l'utilsiateur
+	 */
 	private void lireChemin(Scanner sc){
 		
 		boolean lectureOK = false;
@@ -187,6 +199,9 @@ public class SolutionAuto extends Solution{
 		
 	}
 
+	/**
+	 * Réalise le bon affichage d'une solution dans un fichier
+	 */
 	private void affichageSolutionFichier(){
 		StringBuilder sb = new StringBuilder();
 		if(derniereSolutionAffiche.length() > 1){

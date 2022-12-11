@@ -1,5 +1,6 @@
 package up.mi.jgm.projet.phase2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AffichageMenu {
@@ -42,10 +43,13 @@ public class AffichageMenu {
 					case 4:
 						break;
 					default:
+						System.out.println("Veuillez choisir un nombre un nombre entre 1 et 4");
 						break;
 				}
 
 			}catch(IllegalArgumentException e){
+				e.printStackTrace();
+			}catch(InputMismatchException e){
 				e.printStackTrace();
 			}
 			

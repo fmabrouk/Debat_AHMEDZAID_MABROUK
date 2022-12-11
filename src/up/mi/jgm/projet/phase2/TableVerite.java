@@ -2,8 +2,6 @@ package up.mi.jgm.projet.phase2;
 
 public class TableVerite {
     
-   
-	
 		/**
 		 * Permet de générer une table de vérité de n arguments
 		 * @param tailleGraphe
