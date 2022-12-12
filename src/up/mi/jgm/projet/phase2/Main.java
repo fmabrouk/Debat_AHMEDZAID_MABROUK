@@ -13,7 +13,6 @@ public class Main {
         }catch(IllegalArgumentException e){
             e.printStackTrace();
         }
-
         AffichageMenu.menuPrincipal(debat);
         
        

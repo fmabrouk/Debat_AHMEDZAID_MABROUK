@@ -91,9 +91,9 @@ public class SolutionAuto extends Solution{
 					}
 					bWriter.write(derniereSolutionAffiche);
 				}catch(FileNotFoundException e){
-					e.printStackTrace();
+					System.out.println("Fichier introuvable");
 				}catch(IOException e){
-					e.printStackTrace();
+					System.out.println("Erreur lors de l'ecriture dans le fichier");
 				}
 		}
 	}
