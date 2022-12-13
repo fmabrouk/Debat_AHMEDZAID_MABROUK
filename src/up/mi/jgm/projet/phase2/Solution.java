@@ -1,8 +1,6 @@
 package up.mi.jgm.projet.phase2;
 
 import java.util.ArrayList;
-
-//Classe representant la solution de notre debat
 public class Solution {
 
   /**
@@ -19,7 +17,7 @@ public class Solution {
   }
 
   /**
-   * Cpnstructeur de la classe solution*/
+   * Constructeur de la classe solution*/
   public Solution() {
     ensembleSolution = new ArrayList<Argument>();
   }
@@ -30,8 +28,6 @@ public class Solution {
   public void ajouteArgument(Argument arg) {
     if (!ensembleSolution.contains(arg))
       ensembleSolution.add(arg);
-
-     
   }
 
   /**
@@ -47,7 +43,7 @@ public class Solution {
    * @param g la graphe modélisant le débat
    * @param n le nombre d'argument
    * @return renvoie true si la solution est admissible et faux sinon*/
-  public boolean solutionAdmissible(CreerDebat g, int n) {
+  public boolean solutionAdmissible(Debat g, int n) {
     if (ensembleSolution.isEmpty()) {
       // System.out.println("La solution est vide");
       return true;
@@ -58,11 +54,15 @@ public class Solution {
     return false;
   }
 
-  /**
-   * fonction qui permet de vérifier la condition 2 de la solution admissible
-   * @param g la garphe modélisant le débat
-   * @return renvoie true si c'est vrai et faux sinon*/
-private boolean condition2(CreerDebat g, int n) {
+
+
+/**
+ * Méthode qui vérifie est ce que tous les elemnts de l'ensemble se défendent
+ * @param g Le graphe qui représente le débat
+ * @param n le nombre d'arguments
+ * @return TRUE si tosu les arguments de l'ensmeble se défendent false sinon
+ */
+private boolean condition2(Debat g, int n) {
   
   for(int i=0 ; i<ensembleSolution.size() ; i++){
     for(int j=0 ; j<=n ; j++){
@@ -87,16 +87,13 @@ private boolean condition2(CreerDebat g, int n) {
   
 
   /**
-   * fonction qui permet de vérifier la condition 1 de la solution admissible
-   * @param g la garphe modélisant le débat
+   * fonction qui permet de vérifier qu'il n'existe pas de contradiction interne
+   * @param g la graphe modélisant le débat
    * @return renvoie true si c'est vrai et faux sinon*/
-  private boolean condition1(CreerDebat g) {
+  private boolean condition1(Debat g) {
     for (int i = 0; i < ensembleSolution.size(); i++) {
       for (int j = 0; j < ensembleSolution.size(); j++) {
         if (verif1(ensembleSolution.get(i), ensembleSolution.get(j), g)) {
-          return false;
-        }
-        if (verif1(ensembleSolution.get(j), ensembleSolution.get(i), g)) {
           return false;
         }
       }
@@ -111,7 +108,7 @@ private boolean condition2(CreerDebat g, int n) {
    * @param arg1 l'argument qui contredit
    * @param arg2 l'argument qui subit la contradiction
    * @return renvoie true si arg1 contredit arg2 et false sinon*/
-  private boolean verif1(Argument arg1, Argument arg2, CreerDebat g) {
+  private boolean verif1(Argument arg1, Argument arg2, Debat g) {
     int indiceUn = arg1.getIndice();
     int indiceDeux = arg2.getIndice();
     if (
@@ -127,7 +124,7 @@ private boolean condition2(CreerDebat g, int n) {
    * @param n l'indice d'argument dans la matrice d'adjacence qui contredit
    * @param arg l'argument qui subit la contradiction
    * @return renvoie true si n contredit arg et faux sinon*/
-  private boolean verif2(int n, Argument arg, CreerDebat g) {
+  private boolean verif2(int n, Argument arg, Debat g) {
     int indice = arg.getIndice();
     if (g.isContradiction(n , indice )) {
       return true;
@@ -140,7 +137,7 @@ private boolean condition2(CreerDebat g, int n) {
    * @param arg l'argument qui contredit
    * @param n l'indice d'argument dans la matrice d'adjacence qui subit la contradiction
    * @return renvoie true si arg contredit n et faux sinon*/
-  private boolean verif3(Argument arg, int n, CreerDebat g) {
+  private boolean verif3(Argument arg, int n, Debat g) {
     int indice = arg.getIndice();
     if (g.isContradiction(indice , n)) {
       return true;

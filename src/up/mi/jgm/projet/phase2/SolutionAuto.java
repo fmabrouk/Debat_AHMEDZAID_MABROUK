@@ -8,23 +8,14 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//Classe representant la gestion de solutions d'une maniere automatique et la sauvegarde dans le fichier
 public class SolutionAuto extends Solution{
-	
-	//Attributs:
-	//ArrayList contenant tous les solutions admissibles 
+
     private ArrayList<String> solutionAdmissibles;
-    
-    //ArrayList contenant tous les solutions preferes 
 	private ArrayList<String> solutionPreferees;
-	
-	//Attribut pour sauvegarder dans le ficher la derniere solutions affichee
 	private String derniereSolutionAffiche;
-	
-	//Attribut le nom de ficher pour sauvegarder la solution
 	private String path;
     
-    //Constructeur de la classe solutionAuto
+    
     public SolutionAuto(){
     	solutionAdmissibles = new ArrayList<>();
 		solutionPreferees=new ArrayList<>();
@@ -38,18 +29,18 @@ public class SolutionAuto extends Solution{
      */
     public void solutionAdmissibleAuto(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite){
 		if(solutionAdmissibles.isEmpty()){
-			//remplir la table de vérité
         	remplirSolutionAdmissible(g, tailleGraphe, tableVerite);
 		}
         affichageSolution(solutionAdmissibles);
     }
 	 
-    /**
-     * Méthode qui permet de rechrcher une solution preferee 
-     * @param g le debat qui a été chargé a partir du fichier "graphe"
-     * @param tailleGraphe la taille du graphe
-     * @param tableverite a remplir
-     */
+
+	/**
+	 * Recherche une solution preferee
+	 * @param g graphe de débat
+	 * @param tailleGraphe nombre de sommet
+	 * @param tableVerite table vérité générée en fonction du nb arguemnts
+	 */
 	public void solutionPrefere(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite) {
 		int j=0;
 		if(solutionPreferees.isEmpty()){
@@ -75,10 +66,10 @@ public class SolutionAuto extends Solution{
 		
 		affichageSolution(solutionPreferees);
 	}
-	
-	
+
 	/**
-	 * fonction qui permet de sauvegarder la solution dans le fichier*/
+	 * Permet de sauvegarder une solution de un fichier 
+	 */
 	public void sauvegarderSolution(){
 
 		if(solutionAdmissibles.isEmpty()){
@@ -100,18 +91,20 @@ public class SolutionAuto extends Solution{
 					}
 					bWriter.write(derniereSolutionAffiche);
 				}catch(FileNotFoundException e){
-					e.printStackTrace();
+					System.out.println("Fichier introuvable");
 				}catch(IOException e){
-					e.printStackTrace();
+					System.out.println("Erreur lors de l'ecriture dans le fichier");
 				}
 		}
 	}
+
 	
-	/**
-	 * fonction qui permet de remplir tous les solutions admissibles dans le table de verité
-	 * @param g la graphe de notre debat
-	 * @param tailleGraphe la taille de notre graphe
-	 * @param tableVerite la table de verite a remplir */
+	/** 
+	 * Permet de remplir l'ensemble a tester a partir de la table de vérité 
+	 * @param g le graphe du débat
+	 * @param tailleGraphe le nombre de sommets
+	 * @param tableVerite table vérité générée en fonction du nombre d'arguments
+	 */
 	private void remplirSolutionAdmissible(CreerDebat g, int tailleGraphe,Boolean[][] tableVerite){
 	    solutionAdmissibles.clear();
 	    for(int i=0 ; i<Math.pow(2, tailleGraphe) ;i++){
@@ -121,10 +114,7 @@ public class SolutionAuto extends Solution{
                 }
         }
 	}
-	
-	/**
-	 * fonction permet d'afficher la solution avec les virgules
-	 * @param sol ArrayList des solutions a afficher*/
+
 	private void affichageSolution(ArrayList<String> sol){
 		
 		int j=0;
@@ -154,7 +144,6 @@ public class SolutionAuto extends Solution{
 		int j=0;
 		boolean inclus=false;
 		if(s2.length() > s1.length()){
-			System.out.println(s1+" "+s2);
 			String[] s1Split = s1.split(" ");
 			String[] s2Split = s2.split(" ");
 			while(i<s1Split.length){
@@ -171,10 +160,7 @@ public class SolutionAuto extends Solution{
 				}
 				i++;
 			}
-			if(inclus){
-				return true;
-			}else
-				return false;
+			return true;
 		}
 		return false;
 	}
@@ -194,10 +180,11 @@ public class SolutionAuto extends Solution{
             }
         }   
 	}
-    
-    /**
-     * fonction qui permet de lire le chemin d'accés vers le fichier
-     * @param sc le chemin de fichier à taper*/
+
+	/**
+	 * Permet de trouver le path du fichier entre par l'utilisateur
+	 * @param sc l'entrée de l'utilsiateur
+	 */
 	private void lireChemin(Scanner sc){
 		
 		boolean lectureOK = false;
@@ -214,11 +201,10 @@ public class SolutionAuto extends Solution{
 		}
 		
 	}
-	
-	
+
 	/**
-	 * fonction qui permet d'afficher la solution dans le fihcer 
-	 * */
+	 * Réalise le bon affichage d'une solution dans un fichier
+	 */
 	private void affichageSolutionFichier(){
 		StringBuilder sb = new StringBuilder();
 		if(derniereSolutionAffiche.length() > 1){
