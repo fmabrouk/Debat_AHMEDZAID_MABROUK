@@ -1,6 +1,6 @@
-package up.mi.jgm.projet.phase1;
+package up.mi.jgm.projet.phase2;
 
-
+//Classe rpresentant la graphe de notre debat
 public class Debat {
 	/*
 	 * tableau de deux dimensions pour réprsenter la matrice d'adjacence

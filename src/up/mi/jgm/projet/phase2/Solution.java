@@ -1,9 +1,8 @@
-package up.mi.jgm.projet.phase1;
+package up.mi.jgm.projet.phase2;
 
 import java.util.ArrayList;
 
-import up.mi.jgm.projet.phase2.Argument;
-
+//Classe representant la solution de notre debat
 public class Solution {
 
   /**
@@ -48,7 +47,7 @@ public class Solution {
    * @param g la graphe modélisant le débat
    * @param n le nombre d'argument
    * @return renvoie true si la solution est admissible et faux sinon*/
-  public boolean solutionAdmissible(Debat g, int n) {
+  public boolean solutionAdmissible(CreerDebat g, int n) {
     if (ensembleSolution.isEmpty()) {
       // System.out.println("La solution est vide");
       return true;
@@ -59,11 +58,14 @@ public class Solution {
     return false;
   }
 
-
-private boolean condition2(Debat g, int n) {
+  /**
+   * fonction qui permet de vérifier la condition 2 de la solution admissible
+   * @param g la garphe modélisant le débat
+   * @return renvoie true si c'est vrai et faux sinon*/
+private boolean condition2(CreerDebat g, int n) {
+  
   for(int i=0 ; i<ensembleSolution.size() ; i++){
-    
-    for(int j=0 ; j<n ; j++){
+    for(int j=0 ; j<=n ; j++){
       int k=0; 
       boolean defense=false;
       if(verif2(j, ensembleSolution.get(i),g)){
@@ -88,15 +90,13 @@ private boolean condition2(Debat g, int n) {
    * fonction qui permet de vérifier la condition 1 de la solution admissible
    * @param g la garphe modélisant le débat
    * @return renvoie true si c'est vrai et faux sinon*/
-  private boolean condition1(Debat g) {
+  private boolean condition1(CreerDebat g) {
     for (int i = 0; i < ensembleSolution.size(); i++) {
       for (int j = 0; j < ensembleSolution.size(); j++) {
         if (verif1(ensembleSolution.get(i), ensembleSolution.get(j), g)) {
-          // System.out.println( "Il existe une contradiction entre " + ensembleSolution.get(i) + " et " + ensembleSolution.get(j));
           return false;
         }
         if (verif1(ensembleSolution.get(j), ensembleSolution.get(i), g)) {
-          // System.out.println("Il existe une contradiction entre " + ensembleSolution.get(j) + " et " + ensembleSolution.get(i));
           return false;
         }
       }
@@ -111,7 +111,7 @@ private boolean condition2(Debat g, int n) {
    * @param arg1 l'argument qui contredit
    * @param arg2 l'argument qui subit la contradiction
    * @return renvoie true si arg1 contredit arg2 et false sinon*/
-  private boolean verif1(Argument arg1, Argument arg2, Debat g) {
+  private boolean verif1(Argument arg1, Argument arg2, CreerDebat g) {
     int indiceUn = arg1.getIndice();
     int indiceDeux = arg2.getIndice();
     if (
@@ -127,7 +127,7 @@ private boolean condition2(Debat g, int n) {
    * @param n l'indice d'argument dans la matrice d'adjacence qui contredit
    * @param arg l'argument qui subit la contradiction
    * @return renvoie true si n contredit arg et faux sinon*/
-  private boolean verif2(int n, Argument arg, Debat g) {
+  private boolean verif2(int n, Argument arg, CreerDebat g) {
     int indice = arg.getIndice();
     if (g.isContradiction(n , indice )) {
       return true;
@@ -140,7 +140,7 @@ private boolean condition2(Debat g, int n) {
    * @param arg l'argument qui contredit
    * @param n l'indice d'argument dans la matrice d'adjacence qui subit la contradiction
    * @return renvoie true si arg contredit n et faux sinon*/
-  private boolean verif3(Argument arg, int n, Debat g) {
+  private boolean verif3(Argument arg, int n, CreerDebat g) {
     int indice = arg.getIndice();
     if (g.isContradiction(indice , n)) {
       return true;
@@ -168,37 +168,14 @@ private boolean condition2(Debat g, int n) {
   }
 
  
-   
-  /**
-   * Méthode qui convertit l'ensemble de solution en String
-   * @return l'ensemble de solution en chaine de caractère
-   */
-  public String ensembleSoltoString(){
-
-    String tempStr = ensembleSolution.toString().substring(1,ensembleSolution.toString().length()-1);
-    tempStr = tempStr.replaceAll("\\s", ""); 
-    //String[] chaineTemp = tempStr.split(", ");
-    StringBuilder sb = new StringBuilder();
-//    for(int i=0 ; i<chaineTemp.length;i++){
-//      sb.append(chaineTemp[i]);
-//    }
-    sb.append(tempStr);
-    return sb.toString();
-  }
-
   
   @Override
   public String toString(){
     StringBuilder sb = new StringBuilder();
 
     for(int i=0 ; i<ensembleSolution.size() ; i++){
-    	
-      if(i==0) {
-    	  sb.append(ensembleSolution.get(i).toString());
-		}
-		else {
-			sb.append(","+ensembleSolution.get(i).toString());
-		}
+      sb.append(ensembleSolution.get(i).toString()+" ");
+
     }
 
     return sb.toString();

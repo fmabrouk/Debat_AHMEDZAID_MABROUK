@@ -1,6 +1,6 @@
 package up.mi.jgm.projet.phase2;
 
-import up.mi.jgm.projet.phase1.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -88,7 +88,7 @@ public class CreerDebat extends Debat {
     private String[] parseContradiction(String ligne){
         String [] argumentSplit = new String[3];
         argumentSplit = ligne.split("\\(");
-        String sbstrContradicton = argumentSplit[1].substring(0,argumentSplit[1].length()-1);
+        String sbstrContradicton = argumentSplit[1].substring(0,argumentSplit[1].length()-2);
         System.out.println("sbrstrcontradiction "+sbstrContradicton);
         argumentSplit = sbstrContradicton.split(",");
         return argumentSplit;

@@ -2,6 +2,7 @@ package up.mi.jgm.projet.phase2;
 
 import java.util.Scanner;
 
+//Classe réprsentant l'affichage de menu principal
 public class AffichageMenu {
     
 	
@@ -19,6 +20,7 @@ public class AffichageMenu {
 		SolutionAuto s = new SolutionAuto();
 		
 		Boolean[][] tableVeriteArguments = TableVerite.generateTruthTable(tailleGraphe);
+		
 
 		do{
 			System.out.println("1) Chercher une solution admissible");
