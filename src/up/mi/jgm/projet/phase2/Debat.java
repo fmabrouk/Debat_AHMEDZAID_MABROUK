@@ -25,10 +25,7 @@ public class Debat {
 	  public Debat() {
 	    
 	  }
-	  public Debat(int numNoeud){
-		this.numNoeud=numNoeud;
-		adjMatrice = new boolean[numNoeud][numNoeud];
-	  }
+	 
 	  /**
 	   * fonction permet d'ajouter une contardiction
 	   * @param i l'argument qui contredit

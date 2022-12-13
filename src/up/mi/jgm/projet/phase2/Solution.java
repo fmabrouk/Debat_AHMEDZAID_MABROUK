@@ -178,7 +178,5 @@ private boolean condition2(Debat g, int n) {
     return sb.toString();
   }
   
-  public void affiche() {
-	  System.out.println(ensembleSolution);
-  }
+  
 }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class CreerDebat extends Debat {
 
-    private ArrayList<Argument> arguments= new ArrayList<>();
+    private ArrayList<Argument> arguments;
 
     public ArrayList<Argument> getArguments() {
         return arguments;
