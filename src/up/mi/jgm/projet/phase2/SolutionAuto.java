@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+//Classe representant la gestion des solutions admissibles et preferees d'une maniere automatique. 
 public class SolutionAuto extends Solution{
 
     private ArrayList<String> solutionAdmissibles;

@@ -1,5 +1,6 @@
 package up.mi.jgm.projet.phase2;
 
+//Classe representant la matrice de notre graphe en utilisant les tableaux
 
 public class Debat {
 	/*

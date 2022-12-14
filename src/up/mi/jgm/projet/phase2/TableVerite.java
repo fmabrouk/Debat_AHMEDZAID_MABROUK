@@ -1,5 +1,7 @@
 package up.mi.jgm.projet.phase2;
 
+
+//Classe representant la table de verite a remplir par les ensembles a verifier
 public class TableVerite {
     
 		/**

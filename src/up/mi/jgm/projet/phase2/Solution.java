@@ -1,6 +1,9 @@
 package up.mi.jgm.projet.phase2;
 
 import java.util.ArrayList;
+
+
+//Classe representant les conditions de solutions admissible
 public class Solution {
 
   /**

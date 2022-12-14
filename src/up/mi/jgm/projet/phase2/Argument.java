@@ -1,5 +1,7 @@
 package up.mi.jgm.projet.phase2;
 
+
+//Classe representant l'argument de graphe 
 public class Argument {
 
     private int indice;

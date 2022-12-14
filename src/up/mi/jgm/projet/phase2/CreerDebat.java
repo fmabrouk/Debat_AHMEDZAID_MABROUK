@@ -7,10 +7,20 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+//Classe permet de créer notre graphe debat a partir de fichier.txt
 public class CreerDebat extends Debat {
 
     private ArrayList<Argument> arguments;
 
+   
+    //constructeur
+    public CreerDebat(){
+        arguments=new ArrayList<>();
+    }
+
+    
+    //Getters & setters 
     public ArrayList<Argument> getArguments() {
         return arguments;
     }
@@ -18,11 +28,6 @@ public class CreerDebat extends Debat {
 
     public void setArguments(ArrayList<Argument> arguments) {
         this.arguments = arguments;
-    }
-
-
-    public CreerDebat(){
-        arguments=new ArrayList<>();
     }
 
 

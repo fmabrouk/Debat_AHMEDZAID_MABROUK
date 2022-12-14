@@ -3,6 +3,8 @@ package up.mi.jgm.projet.phase2;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+//Classe representant l'affichage de menu 
+
 public class AffichageMenu {
     
 	

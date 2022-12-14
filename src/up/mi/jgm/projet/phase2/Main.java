@@ -2,6 +2,8 @@ package up.mi.jgm.projet.phase2;
 
 import java.io.File;
 
+
+//Classe representant notre main de projet
 public class Main {
 
     public static void main(String[] args){
