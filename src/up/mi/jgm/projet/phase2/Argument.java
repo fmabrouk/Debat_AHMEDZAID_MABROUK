@@ -3,8 +3,21 @@ package up.mi.jgm.projet.phase2;
 
 //Classe representant l'argument de graphe 
 public class Argument {
-
+	
+	
+	//Attributs : indice de l'argument
     private int indice;
+    
+    //Le nom de l'argument
+    private String arg;
+    
+    //Constructeur
+    public Argument(int indice, String arg){
+        this.indice=indice;
+        this.arg=arg;
+    }
+    
+    //Getters & setters
     public int getIndice() {
         return indice;
     }
@@ -14,7 +27,7 @@ public class Argument {
         this.indice = indice;
     }
 
-    private String arg;
+    
 
     public String getArg() {
         return arg;
@@ -25,11 +38,7 @@ public class Argument {
         this.arg = arg;
     }
 
-    public Argument(int indice, String arg){
-        this.indice=indice;
-        this.arg=arg;
-    }
-    
+   
     
     @Override
     public String toString(){
